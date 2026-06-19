@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "../login/Auth.css";
-
+import "../login/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 
+import { TbLockPassword } from "react-icons/tb";
+import { MdOutlineEmail } from "react-icons/md";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
-import { PiPasswordBold } from "react-icons/pi";
 
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
@@ -39,6 +38,7 @@ export default function Login() {
 
       <main className="page-container">
         <div className="auth-container">
+
           {/* Left Section */}
 
           <div className="left-section">
@@ -56,7 +56,7 @@ export default function Login() {
                 with ease.
               </p>
 
-              <ul>
+              <ul className="feature-list">
                 <li>Create & Manage Invoices</li>
                 <li>Track Payments</li>
                 <li>Professional Reports</li>
@@ -68,6 +68,7 @@ export default function Login() {
 
           <div className="right-section">
             <div className="login-container">
+
               <h2>Login</h2>
 
               <p className="description">
@@ -75,10 +76,12 @@ export default function Login() {
               </p>
 
               <form onSubmit={handleSubmit}>
+
                 <label className="input-heading">
                   Email Address
+
                   <div className="input-container">
-                    <IoIosMail className="input-icon" />
+                    <MdOutlineEmail className="input-icon" />
 
                     <input
                       type="email"
@@ -92,8 +95,9 @@ export default function Login() {
 
                 <label className="input-heading">
                   Password
+
                   <div className="input-container">
-                    <PiPasswordBold className="input-icon" />
+                    <TbLockPassword className="input-icon" />
 
                     <input
                       type={showPassword ? "text" : "password"}
@@ -112,56 +116,44 @@ export default function Login() {
                   </div>
                 </label>
 
-                <div className="forgot">
-                  <Link to="/forgotpassword">Forgot Password?</Link>
+                <div className="extra">
+                  <div className="remember">
+                    <input
+                      type="checkbox"
+                      id="remember"
+                      name="remember"
+                    />
+                    <label htmlFor="remember">Remember Me</label>
+                  </div>
+
+                  <Link
+                    to="/forgotpassword"
+                    className="forgot-link"
+                  >
+                    Forgot Password?
+                  </Link>
                 </div>
 
-                <input type="submit" value="Login" />
+                <button
+                  type="submit"
+                  className="login-button"
+                >
+                  Login
+                </button>
+
               </form>
 
-              <p className="Sign">or continue using</p>
+              <div className="login-link">
+                <span>Don't have an account?</span>
 
-              <div className="social-icons">
-                <img
-                  src="/Assets/Google-Icon.png"
-                  alt="Google"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/Facebook-Icon.png"
-                  alt="Facebook"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/Twitter-Icon.png"
-                  alt="Twitter"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/Discord-Icon.png"
-                  alt="Discord"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/LinkedIn-Icon.png"
-                  alt="LinkedIn"
-                  className="social-img"
-                />
+                <Link to="/signup">
+                  Sign Up
+                </Link>
               </div>
 
-              <p className="Sign">Don't have an account?</p>
-
-              <Link to="/signup">
-                <button className="signup" type="button">
-                  Create Account
-                </button>
-              </Link>
             </div>
           </div>
+
         </div>
       </main>
 

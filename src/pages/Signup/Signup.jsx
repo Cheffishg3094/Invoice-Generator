@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import "../login/Auth.css";
-
+import "./Signup.css";
 import { Link, useNavigate } from "react-router-dom";
 
-import { FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
-import { PiPasswordBold } from "react-icons/pi";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaFileInvoice } from "react-icons/fa";
+import { FaMoneyCheckAlt } from "react-icons/fa";
+import { FaChartBar } from "react-icons/fa";
+import { CiUser } from "react-icons/ci";
+import { TbLockPassword } from "react-icons/tb";
+import { MdOutlineEmail } from "react-icons/md";
 
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
@@ -27,22 +30,24 @@ export default function Signup() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: type === "checkbox" ? checked : value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
+    const { password, confirmPassword, terms } = formData;
+
+    if (password !== confirmPassword) {
       alert("Passwords do not match.");
       return;
     }
 
-    if (!formData.terms) {
-      alert("Please accept Terms & Conditions.");
+    if (!terms) {
+      alert("Please accept Terms of Service & Privacy Policy.");
       return;
     }
 
@@ -57,29 +62,43 @@ export default function Signup() {
 
       <main className="page-container">
         <div className="auth-container">
+
           {/* Left Section */}
 
           <div className="left-section">
             <div className="intro-container">
+
               <img
                 src="/Assets/Signup-Illustration.png"
                 alt="Signup Illustration"
-                className="login-image"
+                className="signup-image"
               />
 
               <h2>Create Account 🚀</h2>
 
               <p className="description">
-                Join Invoice Generator today and start creating professional
-                invoices in just a few clicks.
+                Join us and start managing your invoices like a pro.
               </p>
 
-              <ul>
-                <li>Create Unlimited Invoices</li>
-                <li>Manage Customers</li>
-                <li>Track Payments</li>
-                <li>Professional Reports</li>
-              </ul>
+              <div className="feature-list">
+
+                <div className="feature-item">
+                  <FaFileInvoice className="feature-icon" />
+                  <span>Create & Manage Invoices</span>
+                </div>
+
+                <div className="feature-item">
+                  <FaMoneyCheckAlt className="feature-icon" />
+                  <span>Track Payments</span>
+                </div>
+
+                <div className="feature-item">
+                  <FaChartBar className="feature-icon" />
+                  <span>Professional Reports</span>
+                </div>
+
+              </div>
+
             </div>
           </div>
 
@@ -87,19 +106,27 @@ export default function Signup() {
 
           <div className="right-section">
             <div className="login-container">
-              <h2>Sign Up</h2>
 
-              <p className="description">Create your account to get started.</p>
+              <h1>Sign Up</h1>
 
-              <form onSubmit={handleSubmit}>
+              <p className="description">
+                Create your account to get started.
+              </p>
+
+              <form onSubmit={handleSubmit} autoComplete="off">
+
+                {/* Full Name */}
+
                 <label className="input-heading">
                   Full Name
+
                   <div className="input-container">
-                    <FaUser className="input-icon" />
+                    <CiUser className="input-icon" />
 
                     <input
                       type="text"
                       name="name"
+                      autoComplete="name"
                       placeholder="Enter your full name"
                       value={formData.name}
                       onChange={handleChange}
@@ -108,14 +135,18 @@ export default function Signup() {
                   </div>
                 </label>
 
+                {/* Email */}
+
                 <label className="input-heading">
                   Email Address
+
                   <div className="input-container">
-                    <IoIosMail className="input-icon" />
+                    <MdOutlineEmail className="input-icon" />
 
                     <input
                       type="email"
                       name="email"
+                      autoComplete="email"
                       placeholder="Enter your email"
                       value={formData.email}
                       onChange={handleChange}
@@ -124,111 +155,109 @@ export default function Signup() {
                   </div>
                 </label>
 
+                {/* Password */}
+
                 <label className="input-heading">
                   Password
+
                   <div className="input-container">
-                    <PiPasswordBold className="input-icon" />
+                    <TbLockPassword className="input-icon" />
 
                     <input
                       type={showPassword ? "text" : "password"}
                       name="password"
+                      autoComplete="new-password"
                       placeholder="Create a password"
                       value={formData.password}
                       onChange={handleChange}
                       required
                     />
 
-                    <span
+                    <button
+                      type="button"
                       className="eye-icon"
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       {showPassword ? <FaEyeSlash /> : <FaEye />}
-                    </span>
+                    </button>
+
                   </div>
                 </label>
 
+                {/* Confirm Password */}
+
                 <label className="input-heading">
                   Confirm Password
+
                   <div className="input-container">
-                    <PiPasswordBold className="input-icon" />
+                    <TbLockPassword className="input-icon" />
 
                     <input
                       type={showConfirmPassword ? "text" : "password"}
                       name="confirmPassword"
+                      autoComplete="new-password"
                       placeholder="Confirm your password"
                       value={formData.confirmPassword}
                       onChange={handleChange}
                       required
                     />
 
-                    <span
+                    <button
+                      type="button"
                       className="eye-icon"
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
                     >
-                      {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
-                    </span>
+                      {showConfirmPassword ? (
+                        <FaEyeSlash />
+                      ) : (
+                        <FaEye />
+                      )}
+                    </button>
+
                   </div>
                 </label>
 
+                {/* Terms */}
+
                 <label className="checkbox-container">
+
                   <input
                     type="checkbox"
                     name="terms"
                     checked={formData.terms}
                     onChange={handleChange}
                   />
-                  I agree to the <Link to="#">Terms of Service</Link> and{" "}
-                  <Link to="#">Privacy Policy</Link>
+
+                  <span>
+                    I agree to the{" "}
+                    <Link to="#">Terms of Service</Link>{" "}
+                    and{" "}
+                    <Link to="#">Privacy Policy</Link>
+                  </span>
+
                 </label>
 
-                <input type="submit" value="Sign Up" />
+                {/* Submit */}
+
+                <button
+                  type="submit"
+                  className="signup-button"
+                >
+                  Sign Up
+                </button>
+
               </form>
 
-              <p className="Sign">or continue using</p>
+              <p className="login-link">
+                Already have an account?
+                <Link to="/login"> Login</Link>
+              </p>
 
-              <div className="social-icons">
-                <img
-                  src="/Assets/Google-Icon.png"
-                  alt="Google"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/Facebook-Icon.png"
-                  alt="Facebook"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/Twitter-Icon.png"
-                  alt="Twitter"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/Discord-Icon.png"
-                  alt="Discord"
-                  className="social-img"
-                />
-
-                <img
-                  src="/Assets/LinkedIn-Icon.png"
-                  alt="LinkedIn"
-                  className="social-img"
-                />
-              </div>
-
-              <p className="Sign">Already have an account?</p>
-
-              <Link to="/login">
-                <button type="button" className="signup">
-                  Login Now
-                </button>
-              </Link>
             </div>
           </div>
+
         </div>
       </main>
 

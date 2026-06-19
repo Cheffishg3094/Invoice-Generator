@@ -4,9 +4,9 @@
     align-items: center;
     padding: 0 40px;
     background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-    
-    border-radius: 25px;
+    position: static;
+    top: 0;
+    width: 100vw;
 }
 
 .navbar-section a {
@@ -14,5 +14,5 @@
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: black;
+    color: blue;
 }

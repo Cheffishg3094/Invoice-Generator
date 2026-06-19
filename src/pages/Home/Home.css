@@ -1,0 +1,22 @@
+.home-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 200px;
+}
+
+.home-container button:hover {
+    background-color: darkblue;
+}

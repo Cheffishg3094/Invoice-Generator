@@ -1,0 +1,152 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83vh;
+    background-color: white;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.description {
+    width: 270px;
+    line-height: 1.7;
+    color: #6B7280;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* left section */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 0 40px;
+}
+
+.signup-image {
+    height: 280px;
+}
+
+.input-icon {
+    color: #6B7280;
+    font-size: 18px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+/* right section */
+.right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 455px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-container h2 {
+    font-size: 32x;
+    font-weight: 700;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-heading {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    width: 100%;
+    padding: 0 15px;
+    height: 48px;
+}
+
+.input-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+.signup-button {
+    background-color: blue;
+    color: white;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signup-button:hover {
+    background-color: darkblue;
+}
+
+.checkbox-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 8px;
+} 
+.checkbox-container a {
+    color: blue;
+}
+.login-link {
+    margin-top: 12px;
+    text-align: center;
+    gap: 5px;
+    width: 100%;
+}
+.login-link a{
+    color: blue;
+}
+.eye-icon{
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #6B7280;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.eye-icon:hover{
+    color:#2563EB;
+}
