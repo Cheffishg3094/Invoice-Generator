@@ -19,14 +19,6 @@
     background-color: darkblue;
 }
 
-/* .checkbox-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin-bottom: 8px;
-} */
-
 .checkbox-container a {
     color: #2563EB;
 }

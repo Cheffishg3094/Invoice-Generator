@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-// import "../login/Auth.css";
+import "./ForgotPassword.css";
 
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
+import { AiOutlineSecurityScan } from "react-icons/ai";
+import { PiTimerLight } from "react-icons/pi";
 
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
+import { SiSpringsecurity } from "react-icons/si";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -41,35 +44,45 @@ export default function ForgotPassword() {
                 className="login-image"
               />
 
-              <h2>Forgot Password 🔒</h2>
+              <h2>Forgot Password? 🔒</h2>
 
               <p className="description">
-                Don't worry! Enter your registered email address and we'll send
-                you a One-Time Password (OTP) to reset your password securely.
+                No worries! Enter your email and we'll send you a link to reset
+                your password.
               </p>
 
-              <ul>
-                <li>Secure Verification</li>
-                <li>OTP Based Recovery</li>
-                <li>Quick & Easy Process</li>
-              </ul>
+              <div className="feature-list">
+                <div className="feature-item">
+                  <AiOutlineSecurityScan className="feature-icon" />
+                  <span>Secure Verification</span>
+                </div>
+
+                <div className="feature-item">
+                  <SiSpringsecurity className="feature-icon" />
+                  <span>OTP Based Recovery</span>
+                </div>
+
+                <div className="feature-item">
+                  <PiTimerLight className="feature-icon" />
+                  <span>Quick & Easy Process</span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Right Section */}
 
           <div className="right-section">
-            <div className="login-container">
+            <div className="header-container">
               <h2>Forgot Password</h2>
 
-              <p className="description">
+              <p className="form-description">
                 Enter your registered email address.
               </p>
 
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="forgot-form">
                 <label className="input-heading">
                   Email Address
-
                   <div className="input-container">
                     <IoIosMail className="input-icon" />
 
@@ -83,15 +96,17 @@ export default function ForgotPassword() {
                   </div>
                 </label>
 
-                <input type="submit" value="Send OTP" />
+                <input
+                  type="submit"
+                  value="Send Reset Link"
+                  className="forgot-button"
+                />
               </form>
 
-              <p className="Sign">
-                Remember your password?{" "}
-                <Link to="/login" className="signup">
-                  Login
-                </Link>
-              </p>
+              <div className="forgotp-link">
+                <span>Remember your password? </span>
+                <Link to="/login">Login</Link>
+              </div>
             </div>
           </div>
         </div>

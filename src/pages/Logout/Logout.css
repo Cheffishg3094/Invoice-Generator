@@ -1,0 +1,32 @@
+.logout-description {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.verify1 {
+    width: 100%;
+    padding: 12px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.verify1:hover {
+    background: #1D4ED8;
+}
+
+.verify1-link {
+    width: 100%;
+    text-decoration: none;
+}
+
+.logout-image{
+    height: 150px;
+    width: 150px;
+}

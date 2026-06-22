@@ -62,3 +62,11 @@
     text-align: center;
     width: 100%;
 }
+
+.login-link a {
+    color: blue;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

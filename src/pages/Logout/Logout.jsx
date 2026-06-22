@@ -1,20 +1,41 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
-export default function logout() {
+import "./Logout.css";
+
+export default function Logout() {
   return (
     <>
-    <Navbar />
-    <div className="logout">
-    <img src="/Assets/Check.png" alt="Success" />
+      <Navbar />
 
-    <h1>Logged Out Successfully!</h1>
+      <main className="page-container">
+        <div className="header-container logout-container">
+          <img
+            src="/Assets/Check.png"
+            alt="Success"
+            className="logout-image"
+          />
 
-    <p>You have been logged out of your account.</p>
+          <h2>Logged Out Successfully!</h2>
 
-    <p>Thank you for using Invoice Generator.</p>
-    
-</div><Footer />
+          <p className="logout-description">
+            You have been logged out of your account.
+          </p>
+
+          <p className="logout-description">
+            Thank you for using Invoice Generator.
+          </p>
+
+          <Link to="/login" className="verify-link">
+            <button type="button" className="verify1">
+              Back to Login
+            </button>
+          </Link>
+        </div>
+      </main>
+
+      <Footer />
     </>
   );
 }

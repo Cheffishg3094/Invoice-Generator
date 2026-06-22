@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-// import "../login/Auth.css";
+import "./ResetPassword.css";
 
 import { Link, useNavigate } from "react-router-dom";
-
+import { TbLockPassword } from "react-icons/tb";
+import { GoShieldLock } from "react-icons/go";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { PiPasswordBold } from "react-icons/pi";
-
+import { FiCheckCircle } from "react-icons/fi";
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
+import { GoLock } from "react-icons/go";
+import { MdOutlinePerson } from "react-icons/md";
+
 
 export default function ResetPassword() {
   const navigate = useNavigate();
@@ -64,40 +67,50 @@ export default function ResetPassword() {
               <h2>Reset Password 🔒</h2>
 
               <p className="description">
-                Create a new strong password to keep your account safe and
-                secure.
+                Set a new password for your account to keep it secure.
               </p>
 
-              <ul>
-                <li>Minimum 8 Characters</li>
-                <li>Use Upper & Lowercase Letters</li>
-                <li>Include Numbers</li>
-                <li>Add Special Characters</li>
-              </ul>
+              <div className="feature-list">
+                <div className="feature-item">
+                  <TbLockPassword className="feature-icon" />
+                  <span>Strong Password</span>
+                </div>
+
+                <div className="feature-item">
+                  <GoShieldLock className="feature-icon" />
+                  <span>Secure and Encrypted</span>
+                </div>
+
+                <div className="feature-item">
+                  <GoLock className="feature-icon" />
+                  <span>Account Protection</span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Right Section */}
 
           <div className="right-section">
-            <div className="login-container">
-              <h2>Create New Password</h2>
+            <div className="header-container">
+              <h2>Reset Password</h2>
 
-              <p className="description">
-                Enter your new password.
-              </p>
+              <p className="form-description">Enter your new password below.</p>
 
-              <form onSubmit={handleSubmit}>
+              <form
+                onSubmit={handleSubmit}
+                autoComplete="off"
+                className="reset-form"
+              >
                 <label className="input-heading">
                   New Password
-
                   <div className="input-container">
-                    <PiPasswordBold className="input-icon" />
+                    <MdOutlinePerson className="input-icon" />
 
                     <input
                       type={showPassword ? "text" : "password"}
                       name="password"
-                      placeholder="Enter New Password"
+                      placeholder="Enter new password"
                       value={formData.password}
                       onChange={handleChange}
                       required
@@ -111,17 +124,40 @@ export default function ResetPassword() {
                     </span>
                   </div>
                 </label>
+                <div className="password-rules">
+                  <p>
+                    <strong>Password must contain:</strong>
+                  </p>
 
+                  <div className="rule-item">
+                    <FiCheckCircle className="rule-icon" />
+                    <span> At least 8 characters</span>
+                  </div>
+
+                  <div className="rule-item">
+                    <FiCheckCircle className="rule-icon" />
+                    <span> One uppercase letter</span>
+                  </div>
+
+                  <div className="rule-item">
+                    <FiCheckCircle className="rule-icon" />
+                    <span> One lowercase letter</span>
+                  </div>
+
+                  <div className="rule-item">
+                    <FiCheckCircle className="rule-icon" />
+                    <span> One number</span>
+                  </div>
+                </div>
                 <label className="input-heading">
                   Confirm Password
-
                   <div className="input-container">
-                    <PiPasswordBold className="input-icon" />
+                    <MdOutlinePerson className="input-icon" />
 
                     <input
                       type={showConfirmPassword ? "text" : "password"}
                       name="confirmPassword"
-                      placeholder="Confirm Password"
+                      placeholder="Confirm new password"
                       value={formData.confirmPassword}
                       onChange={handleChange}
                       required
@@ -133,36 +169,23 @@ export default function ResetPassword() {
                         setShowConfirmPassword(!showConfirmPassword)
                       }
                     >
-                      {showConfirmPassword ? (
-                        <FaEyeSlash />
-                      ) : (
-                        <FaEye />
-                      )}
+                      {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                     </span>
                   </div>
                 </label>
 
-                <div className="password-rules">
-                  <p><strong>Password Requirements:</strong></p>
-
-                  <ul>
-                    <li>Minimum 8 characters</li>
-                    <li>At least one uppercase letter</li>
-                    <li>At least one lowercase letter</li>
-                    <li>At least one number</li>
-                    <li>At least one special character</li>
-                  </ul>
-                </div>
-
-                <input type="submit" value="Reset Password" />
+                <input
+                  type="submit"
+                  value="Reset Password"
+                  className="reset-button"
+                />
               </form>
 
-              <p className="Sign">
-                Remember your password?{" "}
-                <Link to="/login" className="signup">
-                  Back to Login
+              <div className="login">
+                <Link to="/login">
+                  <span>Back to Login</span>
                 </Link>
-              </p>
+              </div>
             </div>
           </div>
         </div>
