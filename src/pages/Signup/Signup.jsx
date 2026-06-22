@@ -105,15 +105,15 @@ export default function Signup() {
           {/* Right Section */}
 
           <div className="right-section">
-            <div className="login-container">
+            <div className="header-container">
 
-              <h1>Sign Up</h1>
+              <h2>Sign Up</h2>
 
               <p className="description">
                 Create your account to get started.
               </p>
 
-              <form onSubmit={handleSubmit} autoComplete="off">
+              <form onSubmit={handleSubmit} autoComplete="off" className="signup-form">
 
                 {/* Full Name */}
 

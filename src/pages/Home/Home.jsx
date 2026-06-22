@@ -16,7 +16,7 @@ export default function Home() {
       <Link to="/Login">
         <button>Login</button>
       </Link>
-      <Link to="/VerifyOTP">
+      <Link to="/verify">
         <button>Verify OTP</button>
       </Link>
       <Link to="/ForgotPassword">

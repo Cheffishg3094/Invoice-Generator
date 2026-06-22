@@ -1,0 +1,131 @@
+.signup-image, .login-image {
+    height: 280px;
+}
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83vh;
+    background-color: white;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 455px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.header-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.input-heading {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    width: 100%;
+    padding: 0 15px;
+    height: 48px;
+}
+
+.input-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+.description {
+    width: 80%;
+    line-height: 1.7;
+    color: #6B7280;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+
+.input-icon {
+    color: #6B7280;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-link {
+    margin-top: 12px;
+    text-align: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.login-link a {
+    color: blue;
+}
+
+.eye-icon {
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #6B7280;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.eye-icon:hover {
+    color: #2563EB;
+}
+.feature-item {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.feature-icon {
+    font-size: 20px;
+    color: #2563EB;
+}

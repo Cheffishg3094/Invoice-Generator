@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "../login/Login.css";
+import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
-
+import { FaFileInvoice } from "react-icons/fa";
+import { FaMoneyCheckAlt } from "react-icons/fa";
+import { FaChartBar } from "react-icons/fa";
 import { TbLockPassword } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -38,7 +40,6 @@ export default function Login() {
 
       <main className="page-container">
         <div className="auth-container">
-
           {/* Left Section */}
 
           <div className="left-section">
@@ -56,30 +57,42 @@ export default function Login() {
                 with ease.
               </p>
 
-              <ul className="feature-list">
-                <li>Create & Manage Invoices</li>
-                <li>Track Payments</li>
-                <li>Professional Reports</li>
-              </ul>
+              <div className="feature-list">
+                <div className="feature-item">
+                  <FaFileInvoice className="feature-icon" />
+                  <span>Create & Manage Invoices</span>
+                </div>
+
+                <div className="feature-item">
+                  <FaMoneyCheckAlt className="feature-icon" />
+                  <span>Track Payments</span>
+                </div>
+
+                <div className="feature-item">
+                  <FaChartBar className="feature-icon" />
+                  <span>Professional Reports</span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Right Section */}
 
           <div className="right-section">
-            <div className="login-container">
-
+            <div className="header-container">
               <h2>Login</h2>
 
               <p className="description">
                 Welcome back! Please login to your account.
               </p>
 
-              <form onSubmit={handleSubmit}>
-
+              <form
+                onSubmit={handleSubmit}
+                autoComplete="off"
+                className="login-form"
+              >
                 <label className="input-heading">
                   Email Address
-
                   <div className="input-container">
                     <MdOutlineEmail className="input-icon" />
 
@@ -95,7 +108,6 @@ export default function Login() {
 
                 <label className="input-heading">
                   Password
-
                   <div className="input-container">
                     <TbLockPassword className="input-icon" />
 
@@ -116,44 +128,28 @@ export default function Login() {
                   </div>
                 </label>
 
-                <div className="extra">
-                  <div className="remember">
-                    <input
-                      type="checkbox"
-                      id="remember"
-                      name="remember"
-                    />
+                <div className="remember">
+                  <div className="remember-left">
+                    <input type="checkbox" id="remember" />
                     <label htmlFor="remember">Remember Me</label>
                   </div>
 
-                  <Link
-                    to="/forgotpassword"
-                    className="forgot-link"
-                  >
+                  <Link to="/forgotpassword" className="forgot-link">
                     Forgot Password?
                   </Link>
                 </div>
 
-                <button
-                  type="submit"
-                  className="login-button"
-                >
+                <button type="submit" className="login-button">
                   Login
                 </button>
-
               </form>
 
               <div className="login-link">
                 <span>Don't have an account?</span>
-
-                <Link to="/signup">
-                  Sign Up
-                </Link>
+                <Link to="/signup">Sign Up</Link>
               </div>
-
             </div>
           </div>
-
         </div>
       </main>
 

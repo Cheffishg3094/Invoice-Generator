@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../login/Auth.css";
+// import "../login/Auth.css";
 
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
