@@ -10,22 +10,22 @@ export default function Home() {
       <Navbar />
       <h1>Welcome to Invoice Generator</h1>
       <p>Create beautiful invoices in seconds.</p>
-      <Link to="/Signup">
+      <Link to="/signup">
         <button>Sign Up</button>
       </Link>
-      <Link to="/Login">
+      <Link to="/login">
         <button>Login</button>
       </Link>
       <Link to="/verify">
         <button>Verify OTP</button>
       </Link>
-      <Link to="/ForgotPassword">
+      <Link to="/forgotpassword">
         <button>Forgot Password</button>
       </Link>
-      <Link to="/ResetPassword">
+      <Link to="/resetpassword">
         <button>Reset Password</button>
       </Link>
-      <Link to="/Logout">
+      <Link to="/logout">
         <button>Logout</button>
       </Link>
       <Footer />
