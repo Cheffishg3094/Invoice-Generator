@@ -1,9 +1,10 @@
 .logout-description {
-  text-align: center;
-  margin-top: 5px;
-  font-size: 16px;
-  color: #333;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
 }
+
 .verify1 {
     width: 100%;
     padding: 12px;
@@ -26,7 +27,8 @@
     text-decoration: none;
 }
 
-.logout-image{
+.logout-image {
     height: 150px;
     width: 150px;
+    padding: 20px;
 }
