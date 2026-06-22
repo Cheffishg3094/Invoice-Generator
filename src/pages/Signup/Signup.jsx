@@ -62,12 +62,10 @@ export default function Signup() {
 
       <main className="page-container">
         <div className="auth-container">
-
           {/* Left Section */}
 
           <div className="left-section">
             <div className="intro-container">
-
               <img
                 src="/Assets/Signup-Illustration.png"
                 alt="Signup Illustration"
@@ -81,7 +79,6 @@ export default function Signup() {
               </p>
 
               <div className="feature-list">
-
                 <div className="feature-item">
                   <FaFileInvoice className="feature-icon" />
                   <span>Create & Manage Invoices</span>
@@ -96,9 +93,7 @@ export default function Signup() {
                   <FaChartBar className="feature-icon" />
                   <span>Professional Reports</span>
                 </div>
-
               </div>
-
             </div>
           </div>
 
@@ -106,20 +101,21 @@ export default function Signup() {
 
           <div className="right-section">
             <div className="header-container">
-
               <h2>Sign Up</h2>
 
-              <p className="description">
+              <p className="form-description">
                 Create your account to get started.
               </p>
 
-              <form onSubmit={handleSubmit} autoComplete="off" className="signup-form">
-
+              <form
+                onSubmit={handleSubmit}
+                autoComplete="off"
+                className="signup-form"
+              >
                 {/* Full Name */}
 
                 <label className="input-heading">
                   Full Name
-
                   <div className="input-container">
                     <CiUser className="input-icon" />
 
@@ -139,7 +135,6 @@ export default function Signup() {
 
                 <label className="input-heading">
                   Email Address
-
                   <div className="input-container">
                     <MdOutlineEmail className="input-icon" />
 
@@ -159,7 +154,6 @@ export default function Signup() {
 
                 <label className="input-heading">
                   Password
-
                   <div className="input-container">
                     <TbLockPassword className="input-icon" />
 
@@ -180,7 +174,6 @@ export default function Signup() {
                     >
                       {showPassword ? <FaEyeSlash /> : <FaEye />}
                     </button>
-
                   </div>
                 </label>
 
@@ -188,7 +181,6 @@ export default function Signup() {
 
                 <label className="input-heading">
                   Confirm Password
-
                   <div className="input-container">
                     <TbLockPassword className="input-icon" />
 
@@ -209,20 +201,14 @@ export default function Signup() {
                         setShowConfirmPassword(!showConfirmPassword)
                       }
                     >
-                      {showConfirmPassword ? (
-                        <FaEyeSlash />
-                      ) : (
-                        <FaEye />
-                      )}
+                      {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                     </button>
-
                   </div>
                 </label>
 
                 {/* Terms */}
 
                 <label className="checkbox-container">
-
                   <input
                     type="checkbox"
                     name="terms"
@@ -231,33 +217,24 @@ export default function Signup() {
                   />
 
                   <span>
-                    I agree to the{" "}
-                    <Link to="#">Terms of Service</Link>{" "}
-                    and{" "}
+                    I agree to the <Link to="#">Terms of Service</Link> and{" "}
                     <Link to="#">Privacy Policy</Link>
                   </span>
-
                 </label>
 
                 {/* Submit */}
 
-                <button
-                  type="submit"
-                  className="signup-button"
-                >
+                <button type="submit" className="signup-button">
                   Sign Up
                 </button>
-
               </form>
 
               <p className="login-link">
-                Already have an account?
+                <span>Already have an account? </span>
                 <Link to="/login"> Login</Link>
               </p>
-
             </div>
           </div>
-
         </div>
       </main>
 

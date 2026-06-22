@@ -82,7 +82,7 @@ export default function Login() {
             <div className="header-container">
               <h2>Login</h2>
 
-              <p className="description">
+              <p className="form-description">
                 Welcome back! Please login to your account.
               </p>
 
@@ -135,7 +135,7 @@ export default function Login() {
                   </div>
 
                   <Link to="/forgotpassword" className="forgot-link">
-                    Forgot Password?
+                    Forgot Password? 
                   </Link>
                 </div>
 
@@ -145,7 +145,7 @@ export default function Login() {
               </form>
 
               <div className="login-link">
-                <span>Don't have an account?</span>
+                <span>Don't have an account? </span>
                 <Link to="/signup">Sign Up</Link>
               </div>
             </div>

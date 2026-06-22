@@ -37,14 +37,10 @@
 
 .checkbox-container {
     width: 100%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 15px 0;
-}
-
-.checkbox-container {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -64,6 +60,5 @@
 .login-link {
     margin-top: 12px;
     text-align: center;
-    gap: 10px;
     width: 100%;
 }
