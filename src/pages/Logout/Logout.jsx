@@ -9,8 +9,8 @@ export default function Logout() {
     <>
       <Navbar />
 
-      <main className="page-container">
-        <div className="header-container logout-container">
+      <main className="logout-page">
+        <div className="logout-container">
           <img
             src="/Assets/Check.png"
             alt="Success"
