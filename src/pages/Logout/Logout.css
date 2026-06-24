@@ -19,7 +19,7 @@
 }
 
 .verify1:hover {
-    background: #1D4ED8;
+    background: blue;
 }
 
 .verify1-link {
@@ -37,12 +37,15 @@
     .page-container {
         padding-top: 70px;
         height: auto;
-        width: 90%;
+        width: 90vw;
+        margin: 0 auto;
     }
-    .page-container h2{
+
+    .page-container h2 {
         font-size: 24px;
         text-align: center;
     }
+
     .logout-image {
         height: 120px;
         width: 120px;
