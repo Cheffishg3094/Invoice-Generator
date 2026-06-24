@@ -56,9 +56,9 @@
 @media only screen and (max-width: 1024px) {
 
     .logout-page {
-        padding-top: 90px;
+        padding-top: 70px;
         padding-bottom: 20px;
-        min-height: calc(100vh - 70px);
+        min-height: auto;
     }
 
     .logout-container {
