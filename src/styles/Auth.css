@@ -1,6 +1,8 @@
-.signup-image, .login-image {
+.signup-image,
+.login-image {
     height: 280px;
 }
+
 .page-container {
     display: flex;
     justify-content: center;
@@ -28,10 +30,12 @@
     justify-content: center;
     align-items: center;
 }
+
 .left-section,
-.right-section{
+.right-section {
     flex: 1 1 0;
 }
+
 .header-container {
     display: flex;
     flex-direction: column;
@@ -42,11 +46,13 @@
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 .header-container h2,
 .header-container .description,
-.login-form{
-    width:100%;
+.login-form {
+    width: 100%;
 }
+
 .header-container h2 {
     font-size: 32px;
     font-weight: 700;
@@ -131,6 +137,7 @@
 .eye-icon:hover {
     color: #2563EB;
 }
+
 .feature-item {
     display: flex;
     flex-direction: row;
@@ -142,4 +149,33 @@
 .feature-icon {
     font-size: 20px;
     color: #2563EB;
+}
+
+@media only screen and (max-width: 1024px) {
+    .page-container {
+        padding-top: 70px;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .auth-container {
+         flex-direction: column;
+        gap: 30px;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
+
+    .header-container {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .signup-image,
+    .login-image,
+    .logout-image {
+        height: 220px;
+    }
 }
