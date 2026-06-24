@@ -32,3 +32,18 @@
     width: 150px;
     padding: 20px;
 }
+
+@media only screen and (max-width: 1024px) {
+    .page-container {
+        padding-top: 70px;
+        height: auto;
+    }
+    .page-container h2{
+        font-size: 24px;
+        text-align: center;
+    }
+    .logout-image {
+        height: 120px;
+        width: 120px;
+    }
+}

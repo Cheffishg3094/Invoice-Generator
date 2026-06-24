@@ -159,23 +159,23 @@
     }
 
     .auth-container {
-         flex-direction: column;
+        flex-direction: column;
         gap: 30px;
     }
 
     .left-section,
     .right-section {
-        width: 100%;
+        width: 90%;
     }
 
     .header-container {
         width: 100%;
         max-width: 450px;
     }
-
+/* 
     .signup-image,
     .login-image,
     .logout-image {
         height: 220px;
-    }
+    } */
 }
