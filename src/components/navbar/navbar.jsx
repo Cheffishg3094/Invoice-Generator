@@ -13,6 +13,9 @@ export default function Navbar() {
             <span>Invoice Generator</span>
           </Link>
         </div>
+        <Link to ="/login" className="nav-link">
+          <button className="navbar-button">Login</button>
+        </Link>
       </nav>
     </header>
   );

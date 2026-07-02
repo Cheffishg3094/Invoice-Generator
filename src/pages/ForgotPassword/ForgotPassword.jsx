@@ -6,8 +6,6 @@ import { IoIosMail } from "react-icons/io";
 import { AiOutlineSecurityScan } from "react-icons/ai";
 import { PiTimerLight } from "react-icons/pi";
 
-import Navbar from "../../components/navbar/navbar";
-import Footer from "../../components/footer/footer";
 import { SiSpringsecurity } from "react-icons/si";
 
 export default function ForgotPassword() {
@@ -30,7 +28,6 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <Navbar />
 
       <main className="page-container">
         <div className="auth-container">
@@ -98,7 +95,7 @@ export default function ForgotPassword() {
 
                 <input
                   type="submit"
-                  value="Send Reset Link"
+                  value="Send OTP"
                   className="forgot-button"
                 />
               </form>
@@ -112,7 +109,6 @@ export default function ForgotPassword() {
         </div>
       </main>
 
-      <Footer />
     </>
   );
 }

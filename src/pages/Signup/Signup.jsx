@@ -10,31 +10,19 @@ import { CiUser } from "react-icons/ci";
 import { TbLockPassword } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 
-import Navbar from "../../components/navbar/navbar";
-import Footer from "../../components/footer/footer";
-
 export default function Signup() {
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const [formData, setFormData] = useState({
+  const formData = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
     terms: false,
   });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,8 +46,6 @@ export default function Signup() {
 
   return (
     <>
-      <Navbar />
-
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -125,7 +111,6 @@ export default function Signup() {
                       autoComplete="name"
                       placeholder="Enter your full name"
                       value={formData.name}
-                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -144,7 +129,6 @@ export default function Signup() {
                       autoComplete="email"
                       placeholder="Enter your email"
                       value={formData.email}
-                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -163,7 +147,6 @@ export default function Signup() {
                       autoComplete="new-password"
                       placeholder="Create a password"
                       value={formData.password}
-                      onChange={handleChange}
                       required
                     />
 
@@ -190,7 +173,6 @@ export default function Signup() {
                       autoComplete="new-password"
                       placeholder="Confirm your password"
                       value={formData.confirmPassword}
-                      onChange={handleChange}
                       required
                     />
 
@@ -213,7 +195,6 @@ export default function Signup() {
                     type="checkbox"
                     name="terms"
                     checked={formData.terms}
-                    onChange={handleChange}
                   />
 
                   <span>
@@ -237,8 +218,6 @@ export default function Signup() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

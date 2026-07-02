@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/navbar";
-import Footer from "../../components/footer/footer";
 import "./Logout.css";
 
 export default function Logout() {
   return (
     <>
-      <Navbar />
 
       <main className="logout-page">
         <div className="logout-container">
@@ -35,7 +32,6 @@ export default function Logout() {
         </div>
       </main>
 
-      <Footer />
     </>
   );
 }

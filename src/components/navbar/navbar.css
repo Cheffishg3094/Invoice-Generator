@@ -7,6 +7,22 @@
     position: static;
     top: 0;
     width: 100vw;
+    justify-content: space-between;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.navbar-button {
+     background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 200px;
 }
 
 .navbar-section a {

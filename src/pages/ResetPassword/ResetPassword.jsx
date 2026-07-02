@@ -6,11 +6,8 @@ import { TbLockPassword } from "react-icons/tb";
 import { GoShieldLock } from "react-icons/go";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FiCheckCircle } from "react-icons/fi";
-import Navbar from "../../components/navbar/navbar";
-import Footer from "../../components/footer/footer";
 import { GoLock } from "react-icons/go";
 import { MdOutlinePerson } from "react-icons/md";
-
 
 export default function ResetPassword() {
   const navigate = useNavigate();
@@ -18,17 +15,10 @@ export default function ResetPassword() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const [formData, setFormData] = useState({
+  const formData = useState({
     password: "",
     confirmPassword: "",
   });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,8 +40,6 @@ export default function ResetPassword() {
 
   return (
     <>
-      <Navbar />
-
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -112,7 +100,6 @@ export default function ResetPassword() {
                       name="password"
                       placeholder="Enter new password"
                       value={formData.password}
-                      onChange={handleChange}
                       required
                     />
 
@@ -159,7 +146,6 @@ export default function ResetPassword() {
                       name="confirmPassword"
                       placeholder="Confirm new password"
                       value={formData.confirmPassword}
-                      onChange={handleChange}
                       required
                     />
 
@@ -190,8 +176,6 @@ export default function ResetPassword() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

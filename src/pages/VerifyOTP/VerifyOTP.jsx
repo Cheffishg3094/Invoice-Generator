@@ -1,42 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./VerifyOTP.css";
 import { Link } from "react-router-dom";
 import { MdSecurity } from "react-icons/md";
 import { TiDeviceDesktop } from "react-icons/ti";
 import { MdOutlineTimer } from "react-icons/md";
 
-import Navbar from "../../components/navbar/navbar";
-import Footer from "../../components/footer/footer";
-
 export default function VerifyOTP() {
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-
-  const handleChange = (value, index) => {
-    if (!/^\d?$/.test(value)) return;
-
-    const newOtp = [...otp];
-    newOtp[index] = value;
-    setOtp(newOtp);
-
-    if (value && index < 5) {
-      document.getElementById(`otp-${index + 1}`).focus();
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const enteredOTP = otp.join("");
-
-    console.log("OTP:", enteredOTP);
-
-    // Backend API call yaha aayegi
-  };
-
   return (
     <>
-      <Navbar />
-
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -86,27 +57,62 @@ export default function VerifyOTP() {
 
               <h4>Enter OTP</h4>
 
-              <form onSubmit={handleSubmit}>
+              <form>
                 <div className="otp-container">
-                  {otp.map((digit, index) => (
-                    <input
-                      key={index}
-                      id={`otp-${index}`}
-                      type="text"
-                      inputMode="numeric"
-                      pattern="[0-9]*"
-                      maxLength={1}
-                      value={digit}
-                      onChange={(e) => handleChange(e.target.value, index)}
-                      className="otp-input"
-                    />
-                  ))}
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="otp-input"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                  />
+
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="otp-input"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                  />
+
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="otp-input"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                  />
+
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="otp-input"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                  />
+
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="otp-input"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                  />
+
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="otp-input"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                  />
                 </div>
 
                 <div className="resend-link">
                   <span>Didn't receive the code? </span>
-                  <Link to="/verifyotp">Resend OTP</Link>
+                  <Link to="/verify">Resend OTP</Link>
                 </div>
+
                 <input type="submit" value="Verify OTP" className="verify" />
               </form>
 
@@ -119,8 +125,6 @@ export default function VerifyOTP() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }
