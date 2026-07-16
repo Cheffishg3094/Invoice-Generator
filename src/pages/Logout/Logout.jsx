@@ -5,14 +5,9 @@ import "./Logout.css";
 export default function Logout() {
   return (
     <>
-
       <main className="logout-page">
         <div className="logout-container">
-          <img
-            src="/Assets/Check.png"
-            alt="Success"
-            className="logout-image"
-          />
+          <img src="/Assets/Check.png" alt="Success" className="logout-image" />
 
           <h2>Logged Out Successfully!</h2>
 
@@ -31,7 +26,6 @@ export default function Logout() {
           </Link>
         </div>
       </main>
-
     </>
   );
 }

@@ -10,6 +10,9 @@ import { CiUser } from "react-icons/ci";
 import { TbLockPassword } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 
+import Navbar from "../../components/navbar/navbar";
+import Footer from "../../components/footer/footer";
+
 export default function Signup() {
   const navigate = useNavigate();
 
@@ -46,6 +49,7 @@ export default function Signup() {
 
   return (
     <>
+      <Navbar />
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -218,6 +222,7 @@ export default function Signup() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

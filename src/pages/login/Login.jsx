@@ -8,6 +8,9 @@ import { TbLockPassword } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+import Navbar from "../../components/navbar/navbar";
+import Footer from "../../components/footer/footer";
+
 export default function Login() {
   const navigate = useNavigate();
 
@@ -33,7 +36,7 @@ export default function Login() {
 
   return (
     <>
-
+      <Navbar />
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -148,7 +151,7 @@ export default function Login() {
           </div>
         </div>
       </main>
-
+      <Footer />
     </>
   );
 }

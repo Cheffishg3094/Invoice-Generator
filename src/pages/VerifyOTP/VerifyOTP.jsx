@@ -5,9 +5,13 @@ import { MdSecurity } from "react-icons/md";
 import { TiDeviceDesktop } from "react-icons/ti";
 import { MdOutlineTimer } from "react-icons/md";
 
+import Navbar from "../../components/navbar/navbar";
+import Footer from "../../components/footer/footer";
+
 export default function VerifyOTP() {
   return (
     <>
+      <Navbar />
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -125,6 +129,7 @@ export default function VerifyOTP() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

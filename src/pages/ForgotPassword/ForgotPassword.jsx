@@ -8,6 +8,9 @@ import { PiTimerLight } from "react-icons/pi";
 
 import { SiSpringsecurity } from "react-icons/si";
 
+import Navbar from "../../components/navbar/navbar";
+import Footer from "../../components/footer/footer";
+
 export default function ForgotPassword() {
   const navigate = useNavigate();
 
@@ -28,7 +31,7 @@ export default function ForgotPassword() {
 
   return (
     <>
-
+      <Navbar />
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -108,7 +111,7 @@ export default function ForgotPassword() {
           </div>
         </div>
       </main>
-
+      <Footer />
     </>
   );
 }

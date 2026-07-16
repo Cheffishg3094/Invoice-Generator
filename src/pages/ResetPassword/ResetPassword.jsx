@@ -9,6 +9,9 @@ import { FiCheckCircle } from "react-icons/fi";
 import { GoLock } from "react-icons/go";
 import { MdOutlinePerson } from "react-icons/md";
 
+import Navbar from "../../components/navbar/navbar";
+import Footer from "../../components/footer/footer";
+
 export default function ResetPassword() {
   const navigate = useNavigate();
 
@@ -40,6 +43,7 @@ export default function ResetPassword() {
 
   return (
     <>
+      <Navbar />
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -176,6 +180,7 @@ export default function ResetPassword() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

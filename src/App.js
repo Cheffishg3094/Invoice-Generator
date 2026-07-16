@@ -2,9 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-import Navbar from "./components/navbar/navbar";
-import Footer from "./components/footer/footer";
-
 import Home from "./pages/Home/Home";
 import Login from "./pages/login/Login";
 import Signup from "./pages/Signup/Signup";
@@ -17,7 +14,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <Navbar />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -35,7 +31,6 @@ function App() {
             <Route path="/verify" element={<VerifyOTP />} />
           </Routes>
         </main>
-      <Footer />
       </div>
     </BrowserRouter>
   );
