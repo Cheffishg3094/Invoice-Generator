@@ -46,11 +46,11 @@ export default function Home() {
                 </button>
 
                 <div className="dropdown-menu">
-                  <a href="/blog">Blog</a>
-                  <a href="/guides">GST Guides</a>
-                  <a href="/faq">FAQs</a>
-                  <a href="/help">Help Center</a>
-                  <a href="/contact">Contact Us</a>
+                  <Link to="/blog">Blog</Link>
+                  <Link to="/guides">GST Guides</Link>
+                  <Link to="/faq">FAQs</Link>
+                  <Link to="/help">Help Center</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </div>
               </li>
             </ul>
@@ -81,8 +81,9 @@ export default function Home() {
             </h1>
 
             <p className="home-desc">
-              <div>Generate GST invoices, download PDF,</div>
-              <div>send to clients and get paid faster.</div>
+              Generate GST invoices, download PDF,
+              <br />
+              send to clients and get paid faster.
             </p>
 
             <div className="home-btns">
@@ -154,13 +155,13 @@ export default function Home() {
                   <p>John Smith</p>
                   <span className="email-date">
                     <p>john@example.com</p>
-                    <p>
+                    <p className="date-home">
                       Invoice Date :<span> 16 Jul 2026</span>
                     </p>
                   </span>
                   <span className="mobile-date">
                     <p>+91 96105 41390</p>
-                    <p>
+                    <p className="date-home">
                       Due Date :<span> 20 Jul 2026</span>
                     </p>
                   </span>

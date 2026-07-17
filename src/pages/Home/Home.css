@@ -1,3 +1,5 @@
+/* ------------ Navbar ------------ */
+
 .logo-link {
     display: flex;
     align-items: center;
@@ -41,19 +43,19 @@
     background-color: #3e35e9;
 }
 
-.nav-links-home ul{
-    display:flex;
-    align-items:center;
-    gap:40px;
-    list-style:none;
+.nav-links-home ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
 }
 
-.nav-links-home li{
-    display:flex;
-    align-items:center;
+.nav-links-home li {
+    display: flex;
+    align-items: center;
 }
 
-/* --------------------- */
+/* ------------ Dropdown Menu ------------ */
 
 .dropdown {
     position: relative;
@@ -83,21 +85,15 @@
     position: absolute;
     top: 130%;
     left: 0;
-
     width: 220px;
-
     background: white;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
-
     display: flex;
     flex-direction: column;
-
     opacity: 0;
     visibility: hidden;
-
     transition: .25s ease;
-
     overflow: hidden;
     z-index: 999;
 }
@@ -123,7 +119,7 @@
     transform: rotate(180deg);
 }
 
-/* ---------------------- */
+/* ------------ Main Section ------------ */
 
 .landing-container {
     display: flex;
@@ -132,7 +128,7 @@
     justify-content: center;
     gap: 20px;
     margin: 10px;
-    min-height: 90vh;
+    min-height: 83vh;
     max-width: 100%;
 }
 
@@ -144,6 +140,8 @@
     min-height: 50vh;
     width: 80vw;
 }
+
+/* ------------ Left Section ------------ */
 
 .left-container {
     display: flex;
@@ -235,7 +233,6 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-
 }
 
 .rating-top {
@@ -258,7 +255,6 @@
     font-size: 12px;
     font-weight: 700;
     color: #1e293b;
-
 }
 
 .rating-subtext {
@@ -268,7 +264,8 @@
     font-weight: 500;
 }
 
-/* ------------------- */
+/* ------------ Right Section ------------ */
+
 .right-container {
     display: flex;
     flex-direction: column;
@@ -280,7 +277,6 @@
     gap: 20px;
     margin: 20px;
 }
-
 
 .invoice-header-home {
     display: flex;
@@ -306,6 +302,7 @@
     justify-content: center;
     width: 100%;
     text-align: center;
+    padding-right: 75px;
 }
 
 .email-date,
@@ -315,6 +312,13 @@
     justify-content: space-between;
 }
 
+.date-home {
+    font-weight: bold;
+}
+
+.date-home span {
+    font-weight: normal;
+}
 
 .invoice-table {
     width: 100%;
@@ -345,7 +349,6 @@
     text-align: right;
 }
 
-
 .invoice-total {
     width: 50%;
     margin-left: auto;
@@ -366,6 +369,8 @@
     padding-top: 8px;
     border-top: 1px solid #b1b3b8;
 }
+
+/* ------------ Features Section ------------ */
 
 .horizontal-elements {
     display: flex;
