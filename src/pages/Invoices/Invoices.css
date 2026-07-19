@@ -1,0 +1,130 @@
+.invoices-container {
+    margin: 20px;
+}
+
+.invoices-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.invoices-header a {
+    background-color: #2563eb;
+    padding: 8px 20px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.invoices-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    min-height: 30px;
+    padding: 15px 0;
+}
+
+.invoices-search-box {
+    display: flex;
+    flex-direction: row;
+    flex: 7;
+}
+
+.invoices-search-box input {
+    border-radius: 0 8px 8px 0;
+    width: 100%;
+    padding: 10px;
+    border-left: none;
+    border-right: 1px solid grey;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.invoices-search-box button {
+    background-color: white;
+    border-right: none;
+    font-size: large;
+    display: flex;
+    border-radius: 8px 0 0 8px;
+    align-items: center;
+    width: 30px;
+    justify-content: center;
+    cursor: pointer;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+
+.invoices-status-box {
+    flex: 1;
+    border: 1px solid grey;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+}
+
+.invoices-status-box:hover {
+    background-color: red;
+}
+
+.invoices-client-box {
+    flex: 2;
+    padding: 7px 10px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    align-self: start;
+    justify-content: space-between;
+}
+
+.invoices-client-box:hover {
+    background-color: red;
+}
+
+.invoices-export-box {
+    flex: 1;
+    border: 1px solid grey;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+}
+
+.invoices-export-box:hover {
+    background-color: red;
+}
+
+/* -----------Table-------------------- */
+
+.invoices-table-master {
+    border: 1px solid grey;
+    border-radius: 12px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.invoices-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invoices-table th {
+    background-color: #f8fafc;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.invoices-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e5e7eb;
+}

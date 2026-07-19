@@ -9,6 +9,9 @@ import Logout from "./pages/Logout/Logout";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import VerifyOTP from "./pages/VerifyOTP/VerifyOTP";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Invoices from "./pages/Invoices/Invoices";
+import Error from "./pages/Error/Error";
 
 function App() {
   return (
@@ -29,6 +32,12 @@ function App() {
             <Route path="/resetpassword" element={<ResetPassword />} />
 
             <Route path="/verify" element={<VerifyOTP />} />
+
+            <Route path="/dashboard" element={<Dashboard />} />
+
+            <Route path="/invoices" element={<Invoices />} />
+
+            <Route path="/error" element={<Error />} />
           </Routes>
         </main>
       </div>

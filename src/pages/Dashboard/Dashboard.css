@@ -1,0 +1,195 @@
+.dashboard-layout {
+    display: flex;
+    margin-left: 250px;
+}
+
+/* ------------ Main ------------ */
+
+.dashboard-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f5f7fb;
+    min-height: 100vh;
+}
+
+.dashboard-content {
+    padding: 0px 24px;
+}
+
+/* ------------ Typography ------------ */
+
+.dashboard-content h1 {
+    margin-bottom: 6px;
+}
+
+.dashboard-content p {
+    color: #666;
+}
+
+.dashboard-header {
+    height: auto;
+}
+
+/* ------------ New Invoice Button ------------ */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.new-invoice {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.new-invoice:hover {
+    background: #1d4ed8;
+}
+
+/* ------------ Statistics Cards ------------ */
+
+.dashboard-value-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.details-container {
+    flex: 1;
+    min-width: 220px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.details-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
+}
+
+.details-container h2 {
+    margin: 4px 0;
+    color: #111827;
+}
+
+.details-container p:first-child {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.details-container p:last-child {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+
+/* ------- Dashboard Cards ------  */
+
+.dashboard-charts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+    gap: 15px;
+}
+
+.revenue-chart-card {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.client-chart-card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.recent-invoices {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+
+}
+
+
+.recent-invoices-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.recent-invoices-header a {
+    color: blue;
+}
+
+/* -----------Table-------------------- */
+
+.recent-invoices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.recent-invoices-table th {
+    background: #f8fafc;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.recent-invoices-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.paid {
+    background-color: rgb(230, 245, 233);
+    color: rgb(27, 94, 32);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.overdue {
+    background-color: rgb(255, 230, 230);
+    color: rgb(139, 0, 0);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.pending {
+    background-color: rgb(255, 249, 196);
+    color: rgb(102, 77, 0);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.invoice-number{
+    color: blue;
+}

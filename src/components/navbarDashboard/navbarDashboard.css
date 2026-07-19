@@ -1,0 +1,24 @@
+.dashboard-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.dashboard-nav-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px;
+}
+
+.dashboard-nav-icons svg{
+    height: 32px;
+    width: 32px;
+    color: #2563eb;
+}
+
+.dashboard-user-image {
+    height: 32px;
+    width: 32px;
+    border-radius: 50px;
+}
