@@ -1,0 +1,65 @@
+.profile-container {
+    margin-left: 250px;
+    padding: 24px;
+    min-height: 100vh;
+}
+
+.profile-header {
+    margin-bottom: 24px;
+}
+
+.profile-header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.profile-body {
+    max-width: 600px;
+    background: #fff;
+}
+
+.profile-body h2 {
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.profile-input {
+    margin-bottom: 20px;
+}
+
+.profile-input label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.profile-input input {
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.profile-input input:focus {
+    outline: none;
+}
+
+.save-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.save-btn:hover {
+    background: #1d4ed8;
+}

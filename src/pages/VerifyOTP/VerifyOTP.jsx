@@ -1,6 +1,6 @@
 import React from "react";
 import "./VerifyOTP.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdSecurity } from "react-icons/md";
 import { TiDeviceDesktop } from "react-icons/ti";
 import { MdOutlineTimer } from "react-icons/md";
@@ -9,6 +9,11 @@ import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 
 export default function VerifyOTP() {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
   return (
     <>
       <Navbar />
@@ -61,7 +66,7 @@ export default function VerifyOTP() {
 
               <h4>Enter OTP</h4>
 
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="otp-container">
                   <input
                     type="text"

@@ -27,7 +27,7 @@ export default function Dashboard() {
               <p>Welcome Back, Acme Pvt. Ltd.</p>
             </div>
 
-            <Link to="/create-new" className="new-invoice">
+            <Link to="/create-invoice" className="new-invoice">
               + New Invoice
             </Link>
           </div>

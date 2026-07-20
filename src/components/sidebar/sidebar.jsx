@@ -87,7 +87,7 @@ export default function Sidebar() {
 
         {/* Footer */}
         <div className="sidebar-footer">
-          <Link to="/dashboard/profile" className="profile-link">
+          <Link to="/profile" className="profile-link">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVyvqcMM60qaLE2e2dASg9fJG4w1Db3MIRnvaFkW3vNQI8f6J8KDH2SVVa&s=10"
               alt="User"

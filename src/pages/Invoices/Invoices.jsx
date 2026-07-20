@@ -2,7 +2,6 @@ import React from "react";
 import "./Invoices.css";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
-import { FaChevronDown } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 
 export default function Invoices() {
@@ -25,22 +24,26 @@ export default function Invoices() {
             />
           </div>
           <div className="invoices-status-box">
-            <span>Status</span>
-            <span>
-              <FaChevronDown />
-            </span>
+            <select>
+              <option>All Status</option>
+              <option>Paid</option>
+              <option>Pending</option>
+              <option>Overdue</option>
+              <option>Draft</option>
+            </select>
           </div>
           <div className="invoices-client-box">
-            <span>All Clients</span>
-            <span>
-              <FaChevronDown />
-            </span>
+            <select>
+              <option>All Clients</option>
+            </select>
           </div>
           <div className="invoices-export-box">
-            <span>Export</span>
-            <span>
-              <FaChevronDown />
-            </span>
+            <select>
+              <option>Export</option>
+              <option>PDF</option>
+              <option>Excel</option>
+              <option>CSV</option>
+            </select>
           </div>
         </div>
         <div>
@@ -99,7 +102,7 @@ export default function Invoices() {
                   <td>07 Jul 2026</td>
                   <td>33,040</td>
                   <td>
-                    <span className="paid">Paid</span>
+                    <span className="draft">Draft</span>
                   </td>
                   <td>
                     <BsThreeDots />

@@ -1,0 +1,295 @@
+.create-container-main {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f4f6;
+    min-height: 100dvh;
+    gap: 15px;
+}
+
+/* ==========================
+   Header
+========================== */
+
+.create-container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+}
+
+.blue {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.blue:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.create-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.preview-btn-create,
+.save-btn-create,
+.add-client-btn,
+.add-btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.preview-btn-create {
+    background: #fff;
+    border: 1px solid #6b7280;
+    color: #6b7280;
+}
+
+.preview-btn-create:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.save-btn-create {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+}
+
+.save-btn-create:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================
+   Body
+========================== */
+
+.create-body {
+    display: flex;
+    gap: 15px;
+    margin: 0 10px;
+}
+
+/* ==========================
+   Cards
+========================== */
+
+.client-details,
+.invoice-details,
+.create-items,
+.create-total {
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+}
+
+/* ==========================
+   Client Details
+========================== */
+
+.client-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.client-select {
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.client-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #374151;
+}
+
+.add-client-btn {
+    align-self: flex-start;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+}
+
+.add-client-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================
+   Invoice Details
+========================== */
+
+.invoice-details {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.create-invoice-form {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all .2s ease;
+}
+
+.form-group input:focus,
+.client-select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ==========================
+   Items
+========================== */
+
+.create-items {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.create-table-master {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.create-table-items {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.create-table-items th {
+    background: #f8fafc;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.create-table-items td {
+    padding: 10px 14px;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.create-table-items tbody tr:hover {
+    background: #f9fafb;
+}
+
+.create-table-items tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.add-btn {
+    align-self: flex-start;
+    margin-top: 12px;
+    border: 1px solid #2563eb;
+    background: #fff;
+    color: #2563eb;
+}
+
+.add-btn:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* ==========================
+   Summary
+========================== */
+
+.create-total {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.summary-row,
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.amount-words {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.notes-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 14px;
+    font-family: inherit;
+}

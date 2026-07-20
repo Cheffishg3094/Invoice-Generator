@@ -87,7 +87,7 @@ export default function Home() {
             </p>
 
             <div className="home-btns">
-              <Link to="/create">
+              <Link to="/create-invoice">
                 <button className="create-btn">Create Free Invoice</button>
               </Link>
               <Link to="/demo">

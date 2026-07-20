@@ -12,6 +12,9 @@ import VerifyOTP from "./pages/VerifyOTP/VerifyOTP";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Invoices from "./pages/Invoices/Invoices";
 import Error from "./pages/Error/Error";
+import Products from "./pages/Products/Products";
+import Profile from "./pages/Profile/Profile";
+import Create from "./pages/Create/Create";
 
 function App() {
   return (
@@ -38,6 +41,12 @@ function App() {
             <Route path="/invoices" element={<Invoices />} />
 
             <Route path="/error" element={<Error />} />
+
+            <Route path="/products" element={<Products />} />
+
+            <Route path="/profile" element={<Profile />} />
+
+            <Route path="/create-invoice" element={<Create />} />
           </Routes>
         </main>
       </div>
