@@ -9,17 +9,17 @@ import {
   MdPhoneIphone,
 } from "react-icons/md";
 
-import { Link } from "react-router-dom";
-import { FaFileInvoice } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
-import { FaChevronDown } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { FaFileInvoice, FaStar } from "react-icons/fa";
 
 import Footer from "../../components/footer/footer";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <>
       {/* ------ Navbar -------- */}
+
       <header>
         <nav className="navbar">
           <div className="navbar-section-home">
@@ -34,38 +34,46 @@ export default function Home() {
               <li>
                 <Link to="/features">Features</Link>
               </li>
+
               <li>
                 <Link to="/pricing">Pricing</Link>
               </li>
+
               <li>
                 <Link to="/templates">Templates</Link>
               </li>
-              <li className="dropdown">
-                <button className="dropdown-btn">
-                  Resources <FaChevronDown className="arrow" />
-                </button>
 
-                <div className="dropdown-menu">
-                  <Link to="/blog">Blog</Link>
-                  <Link to="/guides">GST Guides</Link>
-                  <Link to="/faq">FAQs</Link>
-                  <Link to="/help">Help Center</Link>
-                  <Link to="/contact">Contact Us</Link>
-                </div>
+              <li className="dropdown">
+                <select
+                  className="dropdown-btn"
+                  onChange={(e) => navigate(e.target.value)}
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Resources
+                  </option>
+
+                  <option value="/blog">Blog</option>
+                  <option value="/gst-guides">GST Guides</option>
+                  <option value="/faqs">FAQs</option>
+                  <option value="/help-center">Help Center</option>
+                  <option value="/contact">Contact Us</option>
+                </select>
               </li>
             </ul>
           </div>
 
           <div className="btns-nav">
-            <Link to="/login" className="nav-link-home">
-              <button className="navbar-button-home" id="login-home">
-                Login
-              </button>
+            <Link to="/login" className="navbar-button-home" id="login-home">
+              Login
             </Link>
-            <Link to="/signup" className="nav-link-home">
-              <button className="navbar-button-home" id="register-home">
-                Get Started Free
-              </button>
+
+            <Link
+              to="/signup"
+              className="navbar-button-home"
+              id="register-home"
+            >
+              Get Started Free
             </Link>
           </div>
         </nav>
@@ -74,6 +82,7 @@ export default function Home() {
       <div className="landing-container">
         <div className="home-container">
           {/* LEFT SECTION */}
+
           <div className="left-container">
             <h1>
               Create Professional <br />
@@ -87,11 +96,12 @@ export default function Home() {
             </p>
 
             <div className="home-btns">
-              <Link to="/create-invoice">
-                <button className="create-btn">Create Free Invoice</button>
+              <Link to="/create-invoice" className="create-btn">
+                Create Free Invoice
               </Link>
-              <Link to="/demo">
-                <button className="demo-btn">Watch Demo</button>
+
+              <Link to="/demo" className="demo-btn">
+                Watch Demo
               </Link>
             </div>
 
@@ -102,16 +112,19 @@ export default function Home() {
                   alt="user1"
                   className="avatar"
                 />
+
                 <img
                   src="https://thumbs.dreamstime.com/b/portrait-young-handsome-happy-man-wearing-glasses-casual-smart-blue-clothing-yellow-color-background-square-composition-200740125.jpg"
                   alt="user2"
                   className="avatar"
                 />
+
                 <img
                   src="https://thumbs.dreamstime.com/b/portrait-young-handsome-happy-man-wearing-glasses-casual-smart-blue-clothing-yellow-color-background-square-composition-200740125.jpg"
                   alt="user3"
                   className="avatar"
                 />
+
                 <img
                   src="https://thumbs.dreamstime.com/b/portrait-young-handsome-happy-man-wearing-glasses-casual-smart-blue-clothing-yellow-color-background-square-composition-200740125.jpg"
                   alt="user4"
@@ -138,6 +151,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT SECTION */}
+
           <div className="right-container">
             <div className="invoice-header-home">
               <div className="invoice-header-home-logo">Your Logo</div>
@@ -152,19 +166,24 @@ export default function Home() {
               <div className="invoice-info">
                 <div>
                   <p className="label">Bill To</p>
+
                   <p>John Smith</p>
-                  <span className="email-date">
+
+                  <div className="email-date">
                     <p>john@example.com</p>
+
                     <p className="date-home">
-                      Invoice Date :<span> 16 Jul 2026</span>
+                      Invoice Date : <span>16 Jul 2026</span>
                     </p>
-                  </span>
-                  <span className="mobile-date">
+                  </div>
+
+                  <div className="mobile-date">
                     <p>+91 96105 41390</p>
+
                     <p className="date-home">
-                      Due Date :<span> 20 Jul 2026</span>
+                      Due Date : <span>20 Jul 2026</span>
                     </p>
-                  </span>
+                  </div>
                 </div>
               </div>
 
@@ -218,6 +237,7 @@ export default function Home() {
         </div>
 
         {/* FEATURES */}
+
         <div className="horizontal-elements">
           <ul className="footer-elements">
             <li>
@@ -281,6 +301,7 @@ export default function Home() {
           </ul>
         </div>
       </div>
+
       <Footer />
     </>
   );

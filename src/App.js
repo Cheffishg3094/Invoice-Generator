@@ -15,6 +15,7 @@ import Error from "./pages/Error/Error";
 import Products from "./pages/Products/Products";
 import Profile from "./pages/Profile/Profile";
 import Create from "./pages/Create/Create";
+import Settings from "./pages/Settings/Settings";
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
 
             <Route path="/create-invoice" element={<Create />} />
+
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </main>
       </div>
