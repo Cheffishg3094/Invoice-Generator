@@ -1,0 +1,166 @@
+/* ==========================================
+   Reports Container
+========================================== */
+
+.reports-container {
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* ==========================================
+   Reports Header
+========================================== */
+
+.reports-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.reports-header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.reports-select {
+    padding: 10px 16px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #fff;
+    color: #374151;
+
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.reports-select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* ==========================================
+   Statistics Cards
+========================================== */
+
+.reports-stats {
+    display: flex;
+    gap: 20px;
+
+    margin-bottom: 24px;
+}
+
+.reports-cards {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 24px;
+    background: #f5f7fb;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.reports-cards p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.reports-cards h2 {
+    font-size: 34px;
+    color: #111827;
+}
+
+.green {
+    color: #16a34a !important;
+}
+
+/* ==========================================
+   Revenue & Top Clients
+========================================== */
+
+.reports-vitals {
+    display: flex;
+    gap: 20px;
+}
+
+.reports-revenue-overview {
+    flex: 3;
+
+    padding: 24px;
+
+    background: #fff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.reports-top-clients {
+    flex: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 24px;
+
+    background: #fff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.reports-revenue-overview h2,
+.reports-top-clients h2 {
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+/* ==========================================
+   Revenue Chart
+========================================== */
+
+.revenue-overview {
+    width: 100%;
+    height: 320px;
+}
+
+/* ==========================================
+   Top Clients
+========================================== */
+
+.client-report-details {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 8px 0;
+}
+
+.client-report-details-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+}
+
+.client-report-details-name {
+    flex: 1;
+
+    color: #374151;
+    font-size: 15px;
+}
+
+.client-report-details-revenue {
+    font-weight: 600;
+    color: #111827;
+}

@@ -53,7 +53,7 @@ export default function Home() {
                     Resources
                   </option>
 
-                  <option value="/blog">Blog</option>
+                  <option value="/dashboard">Dashboard</option>
                   <option value="/gst-guides">GST Guides</option>
                   <option value="/faqs">FAQs</option>
                   <option value="/help-center">Help Center</option>

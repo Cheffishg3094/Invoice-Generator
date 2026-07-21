@@ -16,6 +16,10 @@ import Products from "./pages/Products/Products";
 import Profile from "./pages/Profile/Profile";
 import Create from "./pages/Create/Create";
 import Settings from "./pages/Settings/Settings";
+import InvoicePreview from "./pages/InvoicePreview/InvoicePreview";
+import Clients from "./pages/Clients/Clients";
+import Reports from "./pages/Reports/Reports";
+import Templates from "./pages/Templates/Templates";
 
 function App() {
   return (
@@ -50,6 +54,14 @@ function App() {
             <Route path="/create-invoice" element={<Create />} />
 
             <Route path="/settings" element={<Settings />} />
+
+            <Route path="/preview" element={<InvoicePreview />} />
+
+            <Route path="/clients" element={<Clients />} />
+
+            <Route path="/reports" element={<Reports />} />
+
+            <Route path="/templates" element={<Templates />} />
           </Routes>
         </main>
       </div>

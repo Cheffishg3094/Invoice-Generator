@@ -10,7 +10,7 @@ export default function Invoices() {
       <div className="invoices-container">
         <div className="invoices-header">
           <h1>Invoices</h1>
-          <Link to="/create-new">+ New Invoice</Link>
+          <Link to="/create-invoice">+ New Invoice</Link>
         </div>
         <div className="invoices-actions">
           <div className="invoices-search-box">

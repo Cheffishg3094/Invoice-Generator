@@ -1,0 +1,239 @@
+/* ==========================================
+   Preview Container
+========================================== */
+
+.preview-container {
+    min-height: 100dvh;
+    background: #d1d5db;
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 20px;
+
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.preview-header-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.preview-header-link h2 {
+    color: #1f2937;
+}
+
+/* Back Button */
+
+.preview-header-link a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    background: #fff;
+
+    color: #374151;
+    font-size: 20px;
+    text-decoration: none;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition: all .2s ease;
+}
+
+.preview-header-link a:hover {
+    color: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* ==========================================
+   Header Buttons
+========================================== */
+
+.header-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.header-btns button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    padding: 10px 20px;
+
+    background: #fff;
+    color: #2563eb;
+
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: all .2s ease;
+}
+
+.header-btns button:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.header-buttons-svg {
+    font-size: 20px;
+}
+
+/* ==========================================
+   Invoice Card
+========================================== */
+
+.preview-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin: 10px 30px;
+    padding: 20px;
+
+    background: #fff;
+    border-radius: 12px;
+}
+
+/* ==========================================
+   Invoice Header
+========================================== */
+
+.preview-invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+.preview-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 10px;
+
+    background: #d1d5db;
+    border-radius: 8px;
+}
+
+/* ==========================================
+   Invoice Details
+========================================== */
+
+.preview-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview-flex-date {
+    display: flex;
+    justify-content: space-between;
+
+    min-width: 250px;
+}
+
+/* ==========================================
+   Invoice Table
+========================================== */
+
+.preview-invoice-table {
+    width: 100%;
+    margin: 20px 0;
+
+    border-collapse: collapse;
+}
+
+.preview-invoice-table th {
+    padding: 10px 14px;
+
+    text-align: left;
+    font-size: 14px;
+
+    background: #f8fafc;
+
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.preview-invoice-table td {
+    padding: 10px 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.preview-invoice-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.preview-invoice-table th:nth-child(n + 4),
+.preview-invoice-table td:nth-child(n + 4) {
+    text-align: right;
+}
+
+/* ==========================================
+   Invoice Total
+========================================== */
+
+.preview-invoice-total {
+    width: 25%;
+    margin-left: auto;
+
+    border-collapse: collapse;
+}
+
+.preview-invoice-total td {
+    padding: 5px 0;
+}
+
+.preview-invoice-total td:last-child {
+    text-align: right;
+}
+
+.preview-grand-total td {
+    padding-top: 8px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    border-top: 1px solid #b1b3b8;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.preview-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.preview-signature img {
+    width: 180px;
+    height: 50px;
+    object-fit: contain;
+}

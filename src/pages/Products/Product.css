@@ -38,9 +38,9 @@
     width: 100%;
     padding: 10px;
     border-left: none;
-    border-right: 1px solid grey;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-right: 1px solid #d5dedb;
+    border-top: 1px solid #d5dedb;
+    border-bottom: 1px solid #d5dedb;
 
 }
 
@@ -56,12 +56,12 @@
     display: flex;
     border-radius: 8px 0 0 8px;
     align-items: center;
-    width: 30px;
+    width: 45px;
     justify-content: center;
     cursor: pointer;
-    border-left: 1px solid grey;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-left: 1px solid #d5dedb;
+    border-top: 1px solid #d5dedb;
+    border-bottom: 1px solid #d5dedb;
 }
 
 .product-search-box button:focus {
@@ -72,9 +72,9 @@
 /* -----------Table-------------------- */
 
 .product-table-master {
-    border: 1px solid grey;
+    border: 1px solid #d5dedb;
     border-radius: 12px;
-    margin: 20px 0;
+    margin: 0;
     overflow: hidden;
 }
 
