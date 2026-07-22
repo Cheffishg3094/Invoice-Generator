@@ -62,6 +62,8 @@ function App() {
             <Route path="/reports" element={<Reports />} />
 
             <Route path="/templates" element={<Templates />} />
+
+            <Route path="*" element={<Error />} />
           </Routes>
         </main>
       </div>
