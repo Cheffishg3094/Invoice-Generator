@@ -9,6 +9,7 @@ import { FaChartBar } from "react-icons/fa";
 import { CiUser } from "react-icons/ci";
 import { TbLockPassword } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
 
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
@@ -18,7 +19,7 @@ import { useAuth } from "../../context/AuthContext";
 export default function Signup() {
   const navigate = useNavigate();
 
-  const { signup } = useAuth();
+  const { signup, googleLogin } = useAuth();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -88,6 +89,22 @@ export default function Signup() {
     }
   };
 
+  const handleGoogleSignup = async () => {
+    setError("");
+
+    try {
+      setLoading(true);
+
+      await googleLogin();
+
+      navigate("/dashboard");
+    } catch (err) {
+      console.error(err);
+      setError("Google Sign Up failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       <Navbar />
@@ -264,6 +281,19 @@ export default function Signup() {
                   disabled={loading}
                 >
                   {loading ? "Creating Account..." : "Sign Up"}
+                </button>
+                <div className="auth-divider">
+                  <span>OR</span>
+                </div>
+
+                <button
+                  type="button"
+                  className="google-signup-button"
+                  onClick={handleGoogleSignup}
+                  disabled={loading}
+                >
+                  <FcGoogle size={22} />
+                  Continue with Google
                 </button>
               </form>
 

@@ -8,6 +8,7 @@ import { FaChartBar } from "react-icons/fa";
 import { TbLockPassword } from "react-icons/tb";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
@@ -184,13 +185,17 @@ export default function Login(x) {
                 >
                   {loading ? "Logging in..." : "Login"}
                 </button>
+                <div className="auth-divider">
+                  <span>OR</span>
+                </div>
                 <button
                   type="button"
                   className="google-login-button"
                   onClick={handleGoogleLogin}
                   disabled={loading}
                 >
-                  Continue with Google
+                  <FcGoogle size={22} />
+                  <span>Continue with Google</span>
                 </button>
               </form>
 
