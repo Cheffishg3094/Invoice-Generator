@@ -13,13 +13,20 @@ import { MdOutlineEmail } from "react-icons/md";
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 
+import { useAuth } from "../../context/AuthContext";
+
 export default function Signup() {
   const navigate = useNavigate();
+
+  const { signup } = useAuth();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const formData = useState({
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
@@ -27,29 +34,64 @@ export default function Signup() {
     terms: false,
   });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { password, confirmPassword, terms } = formData;
+    setError("");
+
+    const { name, email, password, confirmPassword, terms } = formData;
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match.");
+      setError("Passwords do not match.");
       return;
     }
 
     if (!terms) {
-      alert("Please accept Terms of Service & Privacy Policy.");
+      setError("Please accept the Terms of Service and Privacy Policy.");
       return;
     }
 
-    alert("Account Created Successfully!");
+    try {
+      setLoading(true);
 
-    navigate("/login");
+      await signup(name, email, password);
+
+      navigate("/dashboard");
+    } catch (err) {
+      switch (err.code) {
+        case "auth/email-already-in-use":
+          setError("An account with this email already exists.");
+          break;
+
+        case "auth/weak-password":
+          setError("Password should be at least 6 characters.");
+          break;
+
+        case "auth/invalid-email":
+          setError("Please enter a valid email address.");
+          break;
+
+        default:
+          setError("Unable to create your account. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
       <Navbar />
+
       <main className="page-container">
         <div className="auth-container">
           {/* Left Section */}
@@ -97,6 +139,8 @@ export default function Signup() {
                 Create your account to get started.
               </p>
 
+              {error && <p className="auth-error">{error}</p>}
+
               <form
                 onSubmit={handleSubmit}
                 autoComplete="off"
@@ -115,6 +159,7 @@ export default function Signup() {
                       autoComplete="name"
                       placeholder="Enter your full name"
                       value={formData.name}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -133,6 +178,7 @@ export default function Signup() {
                       autoComplete="email"
                       placeholder="Enter your email"
                       value={formData.email}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -151,6 +197,7 @@ export default function Signup() {
                       autoComplete="new-password"
                       placeholder="Create a password"
                       value={formData.password}
+                      onChange={handleChange}
                       required
                     />
 
@@ -177,6 +224,7 @@ export default function Signup() {
                       autoComplete="new-password"
                       placeholder="Confirm your password"
                       value={formData.confirmPassword}
+                      onChange={handleChange}
                       required
                     />
 
@@ -199,6 +247,7 @@ export default function Signup() {
                     type="checkbox"
                     name="terms"
                     checked={formData.terms}
+                    onChange={handleChange}
                   />
 
                   <span>
@@ -209,19 +258,25 @@ export default function Signup() {
 
                 {/* Submit */}
 
-                <button type="submit" className="signup-button">
-                  Sign Up
+                <button
+                  type="submit"
+                  className="signup-button"
+                  disabled={loading}
+                >
+                  {loading ? "Creating Account..." : "Sign Up"}
                 </button>
               </form>
 
               <p className="login-link">
                 <span>Already have an account? </span>
-                <Link to="/login"> Login</Link>
+
+                <Link to="/login">Login</Link>
               </p>
             </div>
           </div>
         </div>
       </main>
+
       <Footer />
     </>
   );

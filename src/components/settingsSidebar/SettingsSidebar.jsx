@@ -10,6 +10,7 @@ import {
   MdOutlineEmail,
   MdOutlineBackup,
 } from "react-icons/md";
+import { IoIosLogOut } from "react-icons/io";
 
 import {
   RiFileSettingsLine,
@@ -87,6 +88,13 @@ export default function SettingsSidebar() {
               <NavLink to="/backup-settings">
                 <MdOutlineBackup />
                 <span>Backup & Restore</span>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/logout">
+                <IoIosLogOut />
+                <span>Logout</span>
               </NavLink>
             </li>
           </ul>

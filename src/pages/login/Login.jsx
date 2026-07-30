@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFileInvoice } from "react-icons/fa";
@@ -11,26 +12,64 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 
-export default function Login() {
+export default function Login(x) {
   const navigate = useNavigate();
+  const { login, googleLogin } = useAuth();
 
   const [showPassword, setShowPassword] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const dummyUser = {
-    email: "admin@gmail.com",
-    password: "Admin@123",
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (email === dummyUser.email && password === dummyUser.password) {
-      navigate("/verify");
-    } else {
-      alert("Invalid Email or Password");
+    setError("");
+    setLoading(true);
+
+    try {
+      await login(email, password);
+
+      navigate("/dashboard");
+    } catch (err) {
+      switch (err.code) {
+        case "auth/invalid-credential":
+          setError("Invalid email or password.");
+          break;
+
+        case "auth/user-disabled":
+          setError("This account has been disabled.");
+          break;
+
+        case "auth/too-many-requests":
+          setError("Too many attempts. Please try again later.");
+          break;
+
+        default:
+          setError("Unable to login. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setError("");
+
+    try {
+      setLoading(true);
+
+      await googleLogin();
+
+      navigate("/dashboard");
+    } catch (err) {
+      console.error(err);
+
+      setError("Google Sign-In failed.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -84,7 +123,7 @@ export default function Login() {
               <p className="form-description">
                 Welcome back! Please login to your account.
               </p>
-
+              {error && <p className="auth-error">{error}</p>}
               <form
                 onSubmit={handleSubmit}
                 autoComplete="off"
@@ -138,8 +177,20 @@ export default function Login() {
                   </Link>
                 </div>
 
-                <button type="submit" className="login-button">
-                  Login
+                <button
+                  type="submit"
+                  className="login-button"
+                  disabled={loading}
+                >
+                  {loading ? "Logging in..." : "Login"}
+                </button>
+                <button
+                  type="button"
+                  className="google-login-button"
+                  onClick={handleGoogleLogin}
+                  disabled={loading}
+                >
+                  Continue with Google
                 </button>
               </form>
 

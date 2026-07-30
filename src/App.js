@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
 
 import "./App.css";
 
@@ -29,39 +31,127 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
 
-            <Route path="/login" element={<Login />} />
+            <Route
+              path="/login"
+              element={
+                <PublicRoute>
+                  <Login />
+                </PublicRoute>
+              }
+            />
 
-            <Route path="/signup" element={<Signup />} />
+            <Route
+              path="/signup"
+              element={
+                <PublicRoute>
+                  <Signup />
+                </PublicRoute>
+              }
+            />
 
+            <Route
+              path="/forgotpassword"
+              element={
+                <PublicRoute>
+                  <ForgotPassword />
+                </PublicRoute>
+              }
+            />
             <Route path="/logout" element={<Logout />} />
-
-            <Route path="/forgotpassword" element={<ForgotPassword />} />
 
             <Route path="/resetpassword" element={<ResetPassword />} />
 
             <Route path="/verify" element={<VerifyOTP />} />
 
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/invoices" element={<Invoices />} />
+            <Route
+              path="/invoices"
+              element={
+                <ProtectedRoute>
+                  <Invoices />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/error" element={<Error />} />
+            <Route
+              path="/products"
+              element={
+                <ProtectedRoute>
+                  <Products />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/products" element={<Products />} />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/create-invoice"
+              element={
+                <ProtectedRoute>
+                  <Create />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/create-invoice" element={<Create />} />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/settings" element={<Settings />} />
+            <Route
+              path="/preview"
+              element={
+                <ProtectedRoute>
+                  <InvoicePreview />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/preview" element={<InvoicePreview />} />
+            <Route
+              path="/clients"
+              element={
+                <ProtectedRoute>
+                  <Clients />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/clients" element={<Clients />} />
+            <Route
+              path="/reports"
+              element={
+                <ProtectedRoute>
+                  <Reports />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/reports" element={<Reports />} />
-
-            <Route path="/templates" element={<Templates />} />
+            <Route
+              path="/templates"
+              element={
+                <ProtectedRoute>
+                  <Templates />
+                </ProtectedRoute>
+              }
+            />
 
             <Route path="*" element={<Error />} />
           </Routes>
