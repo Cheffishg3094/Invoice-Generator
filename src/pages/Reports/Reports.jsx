@@ -2,6 +2,8 @@ import React from "react";
 import "./Reports.css";
 import { FaCircle } from "react-icons/fa";
 import RevenueOverview from "../../components/RevenueOverview/RevenueOverview";
+import Sidebar from "../../components/sidebar/sidebar";
+
 
 export default function Reports() {
   const stats = [
@@ -54,6 +56,7 @@ export default function Reports() {
 
   return (
     <div className="reports-container">
+      <Sidebar />
       {/* Header */}
 
       <div className="reports-header">

@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 import "./Product.css";
+import Sidebar from "../../components/sidebar/sidebar";
+
 
 export default function Products() {
   return (
     <>
       <div className="product-container">
+        <Sidebar />
+        
         <div className="product-header">
           <h1>Products/Services</h1>
           <Link to="/new-product">+ Add Product</Link>

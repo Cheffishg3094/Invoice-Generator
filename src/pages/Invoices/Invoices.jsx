@@ -3,11 +3,13 @@ import "./Invoices.css";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
+import Sidebar from "../../components/sidebar/sidebar";
 
 export default function Invoices() {
   return (
     <>
       <div className="invoices-container">
+        <Sidebar />
         <div className="invoices-header">
           <h1>Invoices</h1>
           <Link to="/create-invoice">+ New Invoice</Link>

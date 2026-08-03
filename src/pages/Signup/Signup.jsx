@@ -156,8 +156,6 @@ export default function Signup() {
                 Create your account to get started.
               </p>
 
-              {error && <p className="auth-error">{error}</p>}
-
               <form
                 onSubmit={handleSubmit}
                 autoComplete="off"
@@ -272,7 +270,7 @@ export default function Signup() {
                     <Link to="#">Privacy Policy</Link>
                   </span>
                 </label>
-
+                {error && <p className="auth-error">{error}</p>}
                 {/* Submit */}
 
                 <button

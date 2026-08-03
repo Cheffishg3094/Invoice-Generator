@@ -1,10 +1,12 @@
 import React from "react";
 import "./Templates.css";
+import Sidebar from "../../components/sidebar/sidebar";
 
 export default function Templates() {
   return (
     <>
       <div className="templates-container">
+        <Sidebar />
         <div className="templates-header">
           <h1>Templates</h1>
         </div>

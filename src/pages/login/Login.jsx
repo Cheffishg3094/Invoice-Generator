@@ -124,7 +124,7 @@ export default function Login(x) {
               <p className="form-description">
                 Welcome back! Please login to your account.
               </p>
-              {error && <p className="auth-error">{error}</p>}
+
               <form
                 onSubmit={handleSubmit}
                 autoComplete="off"
@@ -166,7 +166,7 @@ export default function Login(x) {
                     </span>
                   </div>
                 </label>
-
+                {error && <p className="auth-error">{error}</p>}
                 <div className="remember">
                   <div className="remember-left">
                     <input type="checkbox" id="remember" />

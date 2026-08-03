@@ -3,6 +3,7 @@ import "./Clients.css";
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import Sidebar from "../../components/sidebar/sidebar";
 
 export default function Clients() {
   const clients = [
@@ -70,6 +71,7 @@ export default function Clients() {
 
   return (
     <div className="clients-container">
+      <Sidebar />
       <div className="clients-header">
         <h1>Clients</h1>
 

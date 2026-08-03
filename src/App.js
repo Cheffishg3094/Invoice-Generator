@@ -22,6 +22,7 @@ import InvoicePreview from "./pages/InvoicePreview/InvoicePreview";
 import Clients from "./pages/Clients/Clients";
 import Reports from "./pages/Reports/Reports";
 import Templates from "./pages/Templates/Templates";
+import Pricing from "./pages/Pricing/Pricing";
 
 function App() {
   return (
@@ -149,6 +150,15 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Templates />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/pricing"
+              element={
+                <ProtectedRoute>
+                  <Pricing />
                 </ProtectedRoute>
               }
             />

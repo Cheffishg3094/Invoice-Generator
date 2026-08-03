@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./sidebar.css";
 
 import { FaFileInvoice } from "react-icons/fa";
@@ -19,10 +19,10 @@ export default function Sidebar() {
         <div className="sidebar-content">
           {/* Logo */}
           <div className="sidebar-section-home">
-            <Link to="/" className="sidebar-link">
+            <NavLink to="/" className="sidebar-link">
               <FaFileInvoice className="logo" />
               <span>Invoice Generator</span>
-            </Link>
+            </NavLink>
           </div>
 
           {/* Navigation */}
@@ -35,59 +35,59 @@ export default function Sidebar() {
             </li>
 
             <li>
-              <Link to="/invoices">
+              <NavLink to="/invoices">
                 <FaFileInvoiceDollar />
                 <span>Invoices</span>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/clients">
+              <NavLink to="/clients">
                 <MdOutlineGroup />
                 <span>Clients</span>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/products">
+              <NavLink to="/products">
                 <FaBox />
                 <span>Products / Services</span>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/payments">
+              <NavLink to="/payments">
                 <MdPayment />
                 <span>Payments</span>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/reports">
+              <NavLink to="/reports">
                 <HiOutlineDocumentReport />
                 <span>Reports</span>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/templates">
+              <NavLink to="/templates">
                 <HiOutlineTemplate />
                 <span>Templates</span>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link to="/settings">
+              <NavLink to="/settings">
                 <IoMdSettings />
                 <span>Settings</span>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
 
         {/* Footer */}
         <div className="sidebar-footer">
-          <Link to="/profile" className="profile-link">
+          <NavLink to="/profile" className="profile-link">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVyvqcMM60qaLE2e2dASg9fJG4w1Db3MIRnvaFkW3vNQI8f6J8KDH2SVVa&s=10"
               alt="User"
@@ -102,7 +102,7 @@ export default function Sidebar() {
             <div className="profile-menu">
               <BsThreeDotsVertical />
             </div>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>
