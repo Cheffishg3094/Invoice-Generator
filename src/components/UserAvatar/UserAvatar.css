@@ -1,0 +1,17 @@
+.user-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.initials-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-weight: 600;
+    user-select: none;
+}

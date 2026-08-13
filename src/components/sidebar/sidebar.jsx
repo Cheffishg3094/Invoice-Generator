@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./sidebar.css";
+import { useAuth } from "../../context/AuthContext";
+import UserAvatar from "../UserAvatar/UserAvatar";
 
 import { FaFileInvoice } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
@@ -13,6 +15,7 @@ import { IoMdSettings } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 export default function Sidebar() {
+  const { currentUser } = useAuth();
   return (
     <div className="main-sidebar">
       <div className="sidebar">
@@ -88,14 +91,14 @@ export default function Sidebar() {
         {/* Footer */}
         <div className="sidebar-footer">
           <NavLink to="/profile" className="profile-link">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVyvqcMM60qaLE2e2dASg9fJG4w1Db3MIRnvaFkW3vNQI8f6J8KDH2SVVa&s=10"
-              alt="User"
-              className="user-image"
+            <UserAvatar
+              photoURL={currentUser?.photoURL}
+              displayName={currentUser?.displayName}
+              size={36}
             />
 
             <div className="company-info">
-              <span className="company-name">Acme Pvt. Ltd.</span>
+              <span className="company-name">{currentUser?.displayName}</span>
               <span className="company-plan">Business Plan</span>
             </div>
 

@@ -1,10 +1,13 @@
 import React from "react";
 import "./navbarDashboard.css";
+import { useAuth } from "../../context/AuthContext";
+import UserAvatar from "../UserAvatar/UserAvatar";
 
 import { Link } from "react-router-dom";
-import { IoIosSearch, IoIosNotificationsOutline } from "react-icons/io";
+import { IoIosSearch } from "react-icons/io";
 
 export default function NavbarDashboard() {
+  const { currentUser } = useAuth();
   return (
     <>
       {/* ------ Navbar -------- */}
@@ -15,14 +18,11 @@ export default function NavbarDashboard() {
               <IoIosSearch />
             </span>
             <span>
-              <IoIosNotificationsOutline />
-            </span>
-            <span>
               <Link to="/profile">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVyvqcMM60qaLE2e2dASg9fJG4w1Db3MIRnvaFkW3vNQI8f6J8KDH2SVVa&s=10"
-                  alt="User"
-                  className="dashboard-user-image"
+                <UserAvatar
+                  photoURL={currentUser?.photoURL}
+                  displayName={currentUser?.displayName}
+                  size={34}
                 />
               </Link>
             </span>

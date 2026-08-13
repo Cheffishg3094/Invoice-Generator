@@ -1,8 +1,10 @@
 import React from "react";
 import "./Profile.css";
 import ProfileSidebar from "../../components/profileSidebar/ProfileSidebar";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Profile() {
+  const { currentUser } = useAuth();
   return (
     <>
       <ProfileSidebar />
@@ -19,14 +21,22 @@ export default function Profile() {
             <div className="profile-input">
               <label>
                 Name
-                <input type="text" defaultValue="Acme Pvt. Ltd." />
+                <input
+                  type="text"
+                  defaultValue={currentUser?.displayName}
+                  readOnly
+                />
               </label>
             </div>
 
             <div className="profile-input">
               <label>
                 Email
-                <input type="email" defaultValue="acme@gmail.com" />
+                <input
+                  type="email"
+                  defaultValue={currentUser?.email}
+                  readOnly
+                />
               </label>
             </div>
 

@@ -1,8 +1,12 @@
 import React from "react";
 import "./Settings.css";
 import SettingsSidebar from "../../components/settingsSidebar/SettingsSidebar";
+import { useAuth } from "../../context/AuthContext";
+import UserAvatar from "../../components/UserAvatar/UserAvatar";
 
 export default function Settings() {
+  const { currentUser } = useAuth();
+
   return (
     <>
       <SettingsSidebar />
@@ -25,20 +29,31 @@ export default function Settings() {
                 <input
                   id="business-name"
                   type="text"
-                  defaultValue="Acme Pvt. Ltd."
+                  defaultValue={currentUser?.displayName}
+                  readOnly
                 />
               </div>
 
               <div className="profile-input">
                 <label htmlFor="email">Email</label>
 
-                <input id="email" type="email" defaultValue="acme@gmail.com" />
+                <input
+                  id="email"
+                  type="email"
+                  defaultValue={currentUser?.email}
+                  readOnly
+                />
               </div>
 
               <div className="profile-input">
                 <label htmlFor="phone">Phone</label>
 
-                <input id="phone" type="tel" defaultValue="+91 98765 43210" />
+                <input
+                  id="phone"
+                  type="tel"
+                  defaultValue={currentUser?.phone}
+                  readOnly
+                />
               </div>
 
               <div className="profile-input">
@@ -47,7 +62,8 @@ export default function Settings() {
                 <textarea
                   id="address"
                   rows={4}
-                  defaultValue="123 Business Street, Mumbai, Maharashtra, 400001"
+                  defaultValue={currentUser?.address}
+                  readOnly
                 />
               </div>
 
@@ -62,15 +78,17 @@ export default function Settings() {
           <div className="right-container-settings">
             <div className="profile-input">
               <label>Business Logo</label>
-              <img
-                src="logo.png"
-                alt="Business Logo"
-                className="business-logo-preview"
+              <UserAvatar
+                photoURL={currentUser?.photoURL}
+                displayName={currentUser?.displayName}
+                size={80}
               />
+            </div>
+            <div className="profile-input">
               <label htmlFor="upload-logo" className="upload-logo-btn">
                 Upload Logo
               </label>
-              <input type="file" id="upload-logo" accept="image/*" />{" "}
+              <input type="file" id="upload-logo" accept="image/*" />
             </div>
           </div>
         </div>
