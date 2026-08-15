@@ -8,7 +8,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/login/Login";
 import Signup from "./pages/Signup/Signup";
 import Logout from "./pages/Logout/Logout";
-import ResetPassword from "./pages/ResetPassword/ResetPassword";
+import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import VerifyOTP from "./pages/VerifyOTP/VerifyOTP";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -23,6 +23,7 @@ import Clients from "./pages/Clients/Clients";
 import Reports from "./pages/Reports/Reports";
 import Templates from "./pages/Templates/Templates";
 import Pricing from "./pages/Pricing/Pricing";
+import VerifyEmail from "./pages/VerifyEmail/VerifyEmail";
 
 function App() {
   return (
@@ -60,7 +61,7 @@ function App() {
             />
             <Route path="/logout" element={<Logout />} />
 
-            <Route path="/resetpassword" element={<ResetPassword />} />
+            <Route path="/changepassword" element={<ChangePassword />} />
 
             <Route path="/verify" element={<VerifyOTP />} />
 
@@ -162,6 +163,8 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+            <Route path="/verify-email" element={<VerifyEmail />} />
 
             <Route path="*" element={<Error />} />
           </Routes>

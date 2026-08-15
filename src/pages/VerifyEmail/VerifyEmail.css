@@ -1,0 +1,257 @@
+/* =========================================
+   Verify Email Page
+========================================= */
+
+.verify-email-page {
+    min-height: 83vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffffff;
+
+    padding: 40px 20px;
+}
+
+.verify-email-container {
+    width: 100%;
+    max-width: 500px;
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   Email Icon
+========================================= */
+
+.verify-email-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background-color: #eff6ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+
+/* =========================================
+   Heading
+========================================= */
+
+.verify-email-container h2 {
+    margin: 0 0 12px;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* =========================================
+   Text
+========================================= */
+
+.verify-email-container>p {
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin: 8px 0;
+}
+
+.verify-email-container strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 16px;
+
+    margin: 8px 0 18px;
+
+    word-break: break-word;
+}
+
+.verify-description {
+    max-width: 400px;
+
+    margin: 0 auto 20px !important;
+}
+
+
+/* =========================================
+   Success Message
+========================================= */
+
+.auth-success {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    margin: 15px 0;
+
+    border-radius: 6px;
+
+    background-color: #ecfdf5;
+
+    color: #16a34a;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================
+   Error Message
+========================================= */
+
+.auth-error {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    margin: 15px 0;
+
+    border-radius: 6px;
+
+    background-color: #fef2f2;
+
+    color: #dc2626;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================
+   Main Verify Button
+========================================= */
+
+.verify-button {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.verify-button:hover:not(:disabled) {
+    background-color: #1d4ed8;
+}
+
+.verify-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   Resend Button
+========================================= */
+
+.resend-button {
+    width: 100%;
+
+    padding: 11px 20px;
+
+    margin-top: 12px;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #2563eb;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.resend-button:hover:not(:disabled) {
+    background-color: #2563eb;
+    color: white;
+}
+
+.resend-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   Continue / Login Link
+========================================= */
+
+.verify-email-container .login-link {
+    margin-top: 20px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.verify-email-container .login-link button {
+    border: none;
+
+    background: none;
+
+    padding: 0;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.verify-email-container .login-link button:hover {
+    text-decoration: underline;
+}

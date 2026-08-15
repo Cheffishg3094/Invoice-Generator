@@ -21,6 +21,7 @@ export default function Login(x) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -31,7 +32,7 @@ export default function Login(x) {
     setLoading(true);
 
     try {
-      await login(email, password);
+      await login(email, password, rememberMe);
 
       navigate("/dashboard");
     } catch (err) {
@@ -169,7 +170,13 @@ export default function Login(x) {
                 {error && <p className="auth-error">{error}</p>}
                 <div className="remember">
                   <div className="remember-left">
-                    <input type="checkbox" id="remember" />
+                    <input
+                      type="checkbox"
+                      id="remember"
+                      checked={rememberMe}
+                      onChange={(e) => setRememberMe(e.target.checked)}
+                    />
+
                     <label htmlFor="remember">Remember Me</label>
                   </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ForgotPassword.css";
 
 import { Link } from "react-router-dom";
+
 import { IoIosMail } from "react-icons/io";
 import { AiOutlineSecurityScan } from "react-icons/ai";
 import { PiTimerLight } from "react-icons/pi";
@@ -16,9 +17,11 @@ export default function ForgotPassword() {
   const { forgotPassword } = useAuth();
 
   const [email, setEmail] = useState("");
+
   const [loading, setLoading] = useState(false);
 
   const [error, setError] = useState("");
+
   const [success, setSuccess] = useState("");
 
   const handleSubmit = async (e) => {
@@ -33,20 +36,35 @@ export default function ForgotPassword() {
       await forgotPassword(email);
 
       setSuccess(
-        "Password reset email sent successfully. Please check your inbox."
+        "Password reset link has been sent to your email. Please check your inbox.",
       );
+
+      setEmail("");
     } catch (err) {
+      console.error(err);
+
       switch (err.code) {
         case "auth/user-not-found":
-          setError("No account found with this email.");
+          setError("No account found with this email address.");
           break;
 
         case "auth/invalid-email":
           setError("Please enter a valid email address.");
           break;
 
+        case "auth/too-many-requests":
+          setError("Too many requests. Please wait a while and try again.");
+          break;
+
+        case "auth/network-request-failed":
+          setError("Network error. Please check your internet connection.");
+          break;
+
         default:
-          setError("Unable to send password reset email.");
+          setError(
+            err.friendlyMessage ||
+              "Unable to send password reset link. Please try again.",
+          );
       }
     } finally {
       setLoading(false);
@@ -72,19 +90,19 @@ export default function ForgotPassword() {
               <h2>Forgot Password? 🔒</h2>
 
               <p className="description">
-                No worries! Enter your email and we'll send you a password reset
-                link.
+                No worries! Enter your email and we'll send you a secure link to
+                reset your password.
               </p>
 
               <div className="feature-list">
                 <div className="feature-item">
                   <AiOutlineSecurityScan className="feature-icon" />
-                  <span>Secure Verification</span>
+                  <span>Secure Password Reset</span>
                 </div>
 
                 <div className="feature-item">
                   <SiSpringsecurity className="feature-icon" />
-                  <span>Safe Password Recovery</span>
+                  <span>Email Based Recovery</span>
                 </div>
 
                 <div className="feature-item">
@@ -102,17 +120,21 @@ export default function ForgotPassword() {
               <h2>Forgot Password</h2>
 
               <p className="form-description">
-                Enter your registered email address.
+                Enter your registered email address and we'll send you a
+                password reset link.
               </p>
 
+              {/* Error */}
+
               {error && <p className="auth-error">{error}</p>}
+
+              {/* Success */}
 
               {success && <p className="auth-success">{success}</p>}
 
               <form onSubmit={handleSubmit} className="forgot-form">
                 <label className="input-heading">
                   Email Address
-
                   <div className="input-container">
                     <IoIosMail className="input-icon" />
 
@@ -122,6 +144,7 @@ export default function ForgotPassword() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
+                      disabled={loading}
                     />
                   </div>
                 </label>

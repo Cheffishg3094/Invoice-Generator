@@ -36,17 +36,100 @@
     color: #374151;
 }
 
+/* =========================================================
+   NORMAL INPUTS
+========================================================= */
+
 .profile-input input {
     padding: 12px 14px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     font-size: 15px;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
 .profile-input input:focus {
     outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
 }
+
+/* =========================================================
+   EMAIL READ ONLY
+========================================================= */
+
+#profile-email-readonly input {
+    background-color: #f9fafb;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   PHONE INPUT
+========================================================= */
+
+.profile-input .PhoneInput {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    min-height: 48px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.profile-input .PhoneInput:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Country selector */
+
+.profile-input .PhoneInputCountry {
+    margin: 0;
+    padding-left: 12px;
+}
+
+/* Country select */
+
+.profile-input .PhoneInputCountrySelect {
+    cursor: pointer;
+}
+
+/* Phone number input */
+
+.profile-input .PhoneInputInput {
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.profile-input .PhoneInputInput:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* =========================================================
+   PHONE ERROR
+========================================================= */
+
+.phone-error {
+    margin-top: 6px;
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
 
 .save-btn {
     padding: 12px 24px;
@@ -62,4 +145,44 @@
 
 .save-btn:hover {
     background: #1d4ed8;
+}
+
+.save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   OPTIONAL TEXT
+========================================================= */
+
+.optional-text {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6b7280;
+    margin-left: 5px;
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.profile-success {
+    color: #16a34a;
+    background-color: #ecfdf5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.profile-error {
+    color: #dc2626;
+    background-color: #fef2f2;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
 }

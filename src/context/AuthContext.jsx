@@ -8,6 +8,12 @@ import {
   googleLogin,
   logout,
   forgotPassword,
+  resendVerificationEmail,
+  isEmailVerified,
+  updateUserData,
+  syncEmailVerificationStatus,
+  getCurrentUserData,
+  changePassword,
 } from "../services/authService";
 
 const AuthContext = createContext();
@@ -38,6 +44,12 @@ export function AuthProvider({ children }) {
     googleLogin,
     logout,
     forgotPassword,
+    resendVerificationEmail,
+    isEmailVerified,
+    updateUserData,
+    syncEmailVerificationStatus,
+    getCurrentUserData,
+    changePassword,
   };
 
   return (

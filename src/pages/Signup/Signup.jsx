@@ -66,7 +66,7 @@ export default function Signup() {
 
       await signup(name, email, password);
 
-      navigate("/dashboard");
+      navigate("/verify-email");
     } catch (err) {
       switch (err.code) {
         case "auth/email-already-in-use":

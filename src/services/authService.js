@@ -14,6 +14,9 @@ import {
   linkWithCredential,
   deleteUser,
   reload,
+  browserLocalPersistence,
+  browserSessionPersistence,
+  setPersistence,
 } from "firebase/auth";
 
 import {
@@ -187,6 +190,14 @@ export const updateUserData = async (data) => {
       throw new Error("No user is currently logged in.");
     }
 
+    // Update Firebase Authentication profile
+    if (data.displayName !== undefined) {
+      await updateProfile(user, {
+        displayName: data.displayName,
+      });
+    }
+
+    // Update Firestore profile
     const userRef = doc(db, "users", user.uid);
 
     await updateDoc(userRef, {
@@ -267,8 +278,14 @@ export const signup = async (name, email, password, additionalData = {}) => {
    LOGIN
 ========================================================= */
 
-export const login = async (email, password) => {
+export const login = async (email, password, rememberMe = false) => {
   try {
+    const persistence = rememberMe
+      ? browserLocalPersistence
+      : browserSessionPersistence;
+
+    await setPersistence(auth, persistence);
+
     const credential = await signInWithEmailAndPassword(auth, email, password);
 
     const user = credential.user;
@@ -561,6 +578,43 @@ export const isEmailVerified = async () => {
   }
 
   return currentUser.emailVerified;
+};
+
+/* =========================================================
+   SYNC EMAIL VERIFICATION STATUS
+========================================================= */
+
+export const syncEmailVerificationStatus = async () => {
+  try {
+    const user = auth.currentUser;
+
+    if (!user) {
+      throw new Error("No user is currently logged in.");
+    }
+
+    // Get latest verification status from Firebase Auth
+    await reload(user);
+
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) {
+      throw new Error("Unable to get current user.");
+    }
+
+    // Update Firestore
+    const userRef = doc(db, "users", currentUser.uid);
+
+    await updateDoc(userRef, {
+      emailVerified: currentUser.emailVerified,
+      updatedAt: serverTimestamp(),
+    });
+
+    return currentUser.emailVerified;
+  } catch (error) {
+    console.error("Error syncing email verification:", error);
+
+    throw error;
+  }
 };
 
 /* =========================================================

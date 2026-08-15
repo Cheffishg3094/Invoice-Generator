@@ -6,7 +6,6 @@ import { FaFileInvoice } from "react-icons/fa";
 import { IoArrowBack } from "react-icons/io5";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { IoNotificationsOutline } from "react-icons/io5";
 
 export default function ProfileSidebar() {
   return (
@@ -39,16 +38,9 @@ export default function ProfileSidebar() {
             </li>
 
             <li>
-              <NavLink to="/resetpassword">
+              <NavLink to="/changepassword">
                 <RiLockPasswordLine />
                 <span>Change Password</span>
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink to="/profile/notifications">
-                <IoNotificationsOutline />
-                <span>Notification Settings</span>
               </NavLink>
             </li>
           </ul>
